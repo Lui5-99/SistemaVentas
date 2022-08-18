@@ -32,7 +32,7 @@ namespace CapaPresentacion
 
             if(oUsuario != null)
             {
-                Inicio oInicio = new Inicio();
+                Inicio oInicio = new Inicio(oUsuario);
                 oInicio.Show();
                 this.Hide();
                 oInicio.FormClosing += frm_FormClosing;

@@ -18,3 +18,13 @@ C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\CapaEntid
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\CapaNegocio.pdb
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\CapaDatos.dll
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmCategoria.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmClientes.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmCompras.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmProducto.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmProveedores.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmReportes.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuarios.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmVentas.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleCompra.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleVenta.resources
