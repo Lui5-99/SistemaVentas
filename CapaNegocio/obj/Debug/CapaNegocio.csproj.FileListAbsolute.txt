@@ -9,3 +9,14 @@ C:\Users\Usuario\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.cs
 C:\Users\Usuario\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\Usuario\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\Usuario\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.pdb
