@@ -34,17 +34,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(380, 219);
+            this.label1.Location = new System.Drawing.Point(429, 217);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Prueba Reportes";
+            this.label1.Size = new System.Drawing.Size(167, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Modulo reportes aun en desarrollo";
             // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 372);
+            this.ClientSize = new System.Drawing.Size(1018, 447);
             this.Controls.Add(this.label1);
             this.Name = "frmReportes";
             this.Text = "frmReportes";

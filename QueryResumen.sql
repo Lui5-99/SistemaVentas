@@ -184,7 +184,7 @@ begin
 		
 	end
 	else
-		set @Mensaje = 'No se puede repetir el documento para m�s de un usuario'
+		set @Mensaje = 'No se puede repetir el usuario'
 
 
 end
@@ -223,7 +223,7 @@ begin
 		
 	end
 	else
-		set @Mensaje = 'No se puede repetir el documento para m�s de un usuario'
+		set @Mensaje = 'No se puede repetir el usuario'
 
 
 end
@@ -247,7 +247,7 @@ begin
 	BEGIN
 		set @pasoreglas = 0
 		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque el usuario se encuentra relacionado a una COMPRA\n' 
+		set @Mensaje = @Mensaje + 'No se puede eliminar porque el usuario, se encuentra relacionado a una COMPRA\n' 
 	END
 
 	IF EXISTS (SELECT * FROM VENTA V
@@ -257,7 +257,7 @@ begin
 	BEGIN
 		set @pasoreglas = 0
 		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque el usuario se encuentra relacionado a una VENTA\n' 
+		set @Mensaje = @Mensaje + 'No se puede eliminar porque el usuario, se encuentra relacionado a una VENTA\n' 
 	END
 
 	if(@pasoreglas = 1)

@@ -50,5 +50,26 @@ namespace CapaPresentacion
             txtPwd.Text = "";
             this.Show();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtUser.Select();
+        }
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                txtPwd.Select();
+            }
+        }
+
+        private void txtPwd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btIngresar_Click(sender, e);
+            }
+        }
     }
 }

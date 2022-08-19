@@ -81,6 +81,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(267, 20);
             this.txtUser.TabIndex = 5;
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // txtPwd
             // 
@@ -89,6 +90,7 @@
             this.txtPwd.Size = new System.Drawing.Size(267, 20);
             this.txtPwd.TabIndex = 6;
             this.txtPwd.UseSystemPasswordChar = true;
+            this.txtPwd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPwd_KeyPress);
             // 
             // label3
             // 
@@ -169,6 +171,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

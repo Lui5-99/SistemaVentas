@@ -109,5 +109,7 @@ namespace CapaPresentacion
         {
             AbrirFormulario((IconMenuItem)sender, new frmDetalleCompra());
         }
+ 
+        
     }
 }
