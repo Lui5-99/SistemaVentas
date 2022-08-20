@@ -35,6 +35,7 @@ namespace CapaDatos
                             });
                         }
                     }
+                    oConexion.Close();
                 }
                 catch (Exception ex)
                 {
@@ -67,6 +68,7 @@ namespace CapaDatos
 
                     idCategoriagenerado = Convert.ToInt32(cmd.Parameters["resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    oConexion.Close();
                 }
             }
             catch (Exception ex)
@@ -103,6 +105,7 @@ namespace CapaDatos
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    oConexion.Close();
                 }
             }
             catch (Exception ex)
@@ -135,6 +138,7 @@ namespace CapaDatos
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    oConexion.Close();
                 }
             }
             catch (Exception ex)

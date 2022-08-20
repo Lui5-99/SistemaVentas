@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using CapaEntidad;
+using ClosedXML.Excel;
 
 namespace CapaPresentacion
 {
@@ -77,6 +78,9 @@ namespace CapaPresentacion
                     item.Descripcion,
                     item.oCategoria.IdCategoria,
                     item.oCategoria.Descripcion,
+                    item.Stock,
+                    item.PrecioCompra,
+                    item.PrecioVenta,
                     item.Estado == true ? 1 : 0,
                     item.Estado == true ? "Activo":"No Activo"
                 });
@@ -276,6 +280,59 @@ namespace CapaPresentacion
                         row.Visible = true;
                     else
                         row.Visible = false;
+                }
+            }
+        }
+
+        private void btExcel_Click(object sender, EventArgs e)
+        {
+            if(dgvDatos.Rows.Count < 1)
+                MessageBox.Show("No hay datos por exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+            {
+                DataTable dt = new DataTable();
+                foreach(DataGridViewColumn column in dgvDatos.Columns)
+                {
+                    if(column.HeaderText != "" && column.Visible)
+                    {
+                        dt.Columns.Add(column.HeaderText, typeof(string));
+                    }
+                }
+                foreach(DataGridViewRow row in dgvDatos.Rows)
+                {
+                    if (row.Visible)
+                    {
+                        dt.Rows.Add(new object[]
+                        {
+                            row.Cells[2].Value.ToString(),
+                            row.Cells[3].Value.ToString(),
+                            row.Cells[4].Value.ToString(),
+                            row.Cells[6].Value.ToString(),
+                            row.Cells[7].Value.ToString(),
+                            row.Cells[8].Value.ToString(),
+                            row.Cells[9].Value.ToString(),
+                            row.Cells[11].Value.ToString()
+
+                        });
+                    }
+                }
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.FileName = string.Format("ListadoProductos_{0}", DateTime.Now.ToString("yyyyMMddHHmm"));
+                saveFile.Filter = "Excel Files| *.xlsx; *.xlsm; *.xlsb; *.xls; *‌​.xml";
+                if(saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var sheet = wb.Worksheets.Add(dt, "Lista Productos");
+                        sheet.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(saveFile.FileName);
+                        MessageBox.Show("Excel generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Error al generar excel\n" + ex.Message.ToString(), "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
         }

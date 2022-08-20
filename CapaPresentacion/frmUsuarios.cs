@@ -65,7 +65,7 @@ namespace CapaPresentacion
             cbBusqueda.SelectedIndex = 0;
 
             List<Usuario> lsU = new CN_Usuario().Listar();
-            foreach(Usuario item in lsU)
+            foreach (Usuario item in lsU)
             {
                 dgvDatos.Rows.Add(new object[]
                 {

@@ -464,7 +464,7 @@ begin
 		set @Resultado = SCOPE_IDENTITY()
 	end
 	else
-		set @Mensaje = 'El numero de documento ya existe'
+		set @Mensaje = 'El cliente ya existe'
 end
 
 go
@@ -495,7 +495,7 @@ begin
 	else
 	begin
 		SET @Resultado = 0
-		set @Mensaje = 'El numero de documento ya existe'
+		set @Mensaje = 'El cliente ya existe'
 	end
 end
 
@@ -523,7 +523,7 @@ begin
 		set @Resultado = SCOPE_IDENTITY()
 	end
 	else
-		set @Mensaje = 'El numero de documento ya existe'
+		set @Mensaje = 'El proveedor ya existe'
 end
 
 GO
@@ -554,7 +554,7 @@ begin
 	else
 	begin
 		SET @Resultado = 0
-		set @Mensaje = 'El numero de documento ya existe'
+		set @Mensaje = 'El proveedor ya existe'
 	end
 end
 

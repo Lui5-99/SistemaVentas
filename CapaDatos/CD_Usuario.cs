@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     public class CD_Usuario
     {
-        public  List<Usuario> Listar()
+        public List<Usuario> Listar()
         {
             List<Usuario> ls = new List<Usuario>();
             using(SqlConnection oConexion = new SqlConnection(Conexion.cadena))
@@ -46,6 +46,7 @@ namespace CapaDatos
                             });
                         }
                     }
+                    oConexion.Close();
                 }
                 catch(Exception ex)
                 {
@@ -86,6 +87,8 @@ namespace CapaDatos
 
                     idusuariogenerado = Convert.ToInt32(cmd.Parameters["IdUsuarioResultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+
+                    oConexion.Close();
                 }
             }
             catch (Exception ex)
@@ -130,6 +133,8 @@ namespace CapaDatos
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+
+                    oConexion.Close();
                 }
             }
             catch (Exception ex)
@@ -162,6 +167,8 @@ namespace CapaDatos
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+
+                    oConexion.Close();
                 }
             }
             catch (Exception ex)
