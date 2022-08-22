@@ -26,6 +26,8 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            Negocio oNegocio = new CN_Negocio().obtenerDatos();
+            lblSistema.Text = oNegocio != null ? oNegocio.Nombre : "Sistema Ventas";
             List<Permiso> ls = new CN_Permiso().Listar(usuarioActual.IdUsuario);
             foreach (IconMenuItem iconMenu in menu.Items)
             {
@@ -55,9 +57,11 @@ namespace CapaPresentacion
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
-            frm.BackColor = Color.SteelBlue;
+            frm.BackColor = Color.SlateGray;
             contenedor.Controls.Add(frm);
             frm.Show();
+            Negocio oNegocio = new CN_Negocio().obtenerDatos();
+            lblSistema.Text = oNegocio != null ? oNegocio.Nombre : "Sistema Ventas";
         }
 
         private void menuUsuario_Click(object sender, EventArgs e)
@@ -102,14 +106,17 @@ namespace CapaPresentacion
 
         private void menuRegistar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new frmCompras());
+            AbrirFormulario((IconMenuItem)sender, new frmCompras(usuarioActual));
         }
 
         private void menuDetalleCompra_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmDetalleCompra());
         }
- 
-        
+
+        private void menuConfiguracion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmConfiguracion());
+        }
     }
 }

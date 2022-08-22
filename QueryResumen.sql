@@ -247,7 +247,7 @@ begin
 	BEGIN
 		set @pasoreglas = 0
 		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque el usuario, se encuentra relacionado a una COMPRA\n' 
+		set @Mensaje = @Mensaje + 'No se puede eliminar, el usuario, se encuentra relacionado a una COMPRA\n' 
 	END
 
 	IF EXISTS (SELECT * FROM VENTA V
@@ -257,7 +257,7 @@ begin
 	BEGIN
 		set @pasoreglas = 0
 		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque el usuario, se encuentra relacionado a una VENTA\n' 
+		set @Mensaje = @Mensaje + 'No se puede eliminar, el usuario se encuentra relacionado a una VENTA\n' 
 	END
 
 	if(@pasoreglas = 1)
@@ -420,7 +420,7 @@ begin
 	BEGIN
 		set @pasoreglas = 0
 		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionado a una COMPRA\n' 
+		set @Mensaje = @Mensaje + 'No se puede eliminar, se encuentra relacionado a una COMPRA\n' 
 	END
 
 	IF EXISTS (SELECT * FROM DETALLE_VENTA dv
@@ -430,7 +430,7 @@ begin
 	BEGIN
 		set @pasoreglas = 0
 		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionado a una VENTA\n' 
+		set @Mensaje = @Mensaje + 'No se puede eliminar, se encuentra relacionado a una VENTA\n' 
 	END
 
 	if(@pasoreglas = 1)
@@ -580,7 +580,7 @@ begin
 	ELSE
 	begin
 		SET @Resultado = 0
-		set @Mensaje = 'El proveedor se encuentara relacionado a una compra'
+		set @Mensaje = 'No se puede eliminar, el proveedor se encuentara relacionado a una compra'
 	end
 
 end
@@ -777,16 +777,10 @@ GO
 
  insert into USUARIO(Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
  values 
- ('Admin','ADMINISTRADOR','@GMAIL.COM','qwerty',1,1)
+ ('Admin','ADMINISTRADOR','@GMAIL.COM','Admin',1,1)
 
  GO
 
-
- insert into USUARIO(Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
- values 
- ('Luis','Luis Arellano','@GMAIL.COM','132456',2,1)
-
- GO
 
   insert into PERMISO(IdRol,NombreMenu) values
   (1,'menuUsuario'),
@@ -810,5 +804,8 @@ GO
 
   GO
 
-  insert into NEGOCIO(IdNegocio,Nombre,RUC,Direccion,Logo) values
-  (1,'Codigo Estudiante','20202020','av. codigo estudiante 123',null)
+/*insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion) values
+(1,'Luis Arellano','AEBL990905DX5','Zamora #43, Vasco de Quiroga, La Piedad Mich.')*/
+
+insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion) values
+(1,'Sistema Ventas','XAXX010101000','')

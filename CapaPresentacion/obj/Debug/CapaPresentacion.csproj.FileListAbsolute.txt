@@ -65,3 +65,13 @@ C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\D
 C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\ClosedXML.dll
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\ClosedXML.pdb
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\ClosedXML.xml
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmConfiguracion.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProveedor.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProductos.resources

@@ -30,50 +30,52 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.lblSistema = new System.Windows.Forms.Label();
+            this.picDefault = new FontAwesome.Sharp.IconPictureBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btIngresar = new FontAwesome.Sharp.IconButton();
             this.btCancelar = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picDefault)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.SteelBlue;
+            this.label1.BackColor = System.Drawing.Color.SlateGray;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 271);
             this.label1.TabIndex = 0;
             // 
-            // label2
+            // lblSistema
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.SteelBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 231);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Sistema de Ventas";
+            this.lblSistema.BackColor = System.Drawing.Color.SlateGray;
+            this.lblSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSistema.ForeColor = System.Drawing.Color.White;
+            this.lblSistema.Location = new System.Drawing.Point(12, 231);
+            this.lblSistema.Name = "lblSistema";
+            this.lblSistema.Size = new System.Drawing.Size(241, 31);
+            this.lblSistema.TabIndex = 3;
+            this.lblSistema.Text = "Sistema de Ventas";
+            this.lblSistema.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // iconPictureBox1
+            // picDefault
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.StoreAlt;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 117;
-            this.iconPictureBox1.Location = new System.Drawing.Point(64, 76);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(129, 117);
-            this.iconPictureBox1.TabIndex = 4;
-            this.iconPictureBox1.TabStop = false;
+            this.picDefault.BackColor = System.Drawing.Color.SlateGray;
+            this.picDefault.IconChar = FontAwesome.Sharp.IconChar.StoreAlt;
+            this.picDefault.IconColor = System.Drawing.Color.White;
+            this.picDefault.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.picDefault.IconSize = 117;
+            this.picDefault.Location = new System.Drawing.Point(64, 76);
+            this.picDefault.Name = "picDefault";
+            this.picDefault.Size = new System.Drawing.Size(129, 117);
+            this.picDefault.TabIndex = 4;
+            this.picDefault.TabStop = false;
             // 
             // txtUser
             // 
@@ -152,19 +154,31 @@
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Location = new System.Drawing.Point(64, 76);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(129, 117);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 11;
+            this.picLogo.TabStop = false;
+            this.picLogo.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 271);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btIngresar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.picDefault);
+            this.Controls.Add(this.lblSistema);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -172,7 +186,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDefault)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,13 +196,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label lblSistema;
+        private FontAwesome.Sharp.IconPictureBox picDefault;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton btIngresar;
         private FontAwesome.Sharp.IconButton btCancelar;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }

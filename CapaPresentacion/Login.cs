@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaEntidad;
+using System.IO;
 
 namespace CapaPresentacion
 {
@@ -17,6 +18,14 @@ namespace CapaPresentacion
         public Login()
         {
             InitializeComponent();
+        }
+        public Image byte2image(byte[] imageByte)
+        {
+            MemoryStream ms = new MemoryStream();
+            ms.Write(imageByte, 0, imageByte.Length);
+            Image image = new Bitmap(ms);
+
+            return image;
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
@@ -48,12 +57,43 @@ namespace CapaPresentacion
         {
             txtUser.Text = "";
             txtPwd.Text = "";
+            Negocio oNegocio = new CN_Negocio().obtenerDatos();
+            lblSistema.Text = oNegocio != null ? oNegocio.Nombre : "Sistema Ventas";
+            bool obtenido = true;
+            byte[] image = new CN_Negocio().ObtenerLogo(out obtenido);
+            if (image.Length > 0)
+            {
+                picLogo.Image = byte2image(image);
+                picLogo.Visible = true;
+                picDefault.Visible = false;
+            }
+            else
+            {
+                picLogo.Visible = false;
+                picDefault.Visible = true;
+            }
             this.Show();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
             txtUser.Select();
+            Negocio oNegocio = new CN_Negocio().obtenerDatos();
+            lblSistema.Text = oNegocio != null ? oNegocio.Nombre : "Sistema Ventas";
+            bool obtenido = true;
+            byte[] image = new CN_Negocio().ObtenerLogo(out obtenido);
+            if (image.Length > 0)
+            {
+                picLogo.Image = byte2image(image);
+                picLogo.Visible = true;
+                picDefault.Visible = false;
+            }
+            else
+            {
+                picLogo.Visible = false;
+                picDefault.Visible = true;
+            }
+                
         }
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
