@@ -118,7 +118,7 @@ namespace CapaPresentacion
                     dgvDatos.Rows.Add(new object[]
                     {
                         "",
-                        txtId.Text,
+                        IdUsuariogenerado.ToString(),
                         txtUsuario.Text,
                         txtNombre.Text,
                         txtCorreo.Text,

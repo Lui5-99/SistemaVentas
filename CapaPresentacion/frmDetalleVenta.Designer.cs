@@ -34,18 +34,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(425, 217);
+            this.label1.Location = new System.Drawing.Point(507, 270);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 13);
+            this.label1.Size = new System.Drawing.Size(202, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Modulo ventas aun en desarrollo";
             // 
             // frmDetalleVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 447);
+            this.ClientSize = new System.Drawing.Size(1357, 550);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDetalleVenta";
             this.Text = "frmDetalleVenta";
             this.ResumeLayout(false);
