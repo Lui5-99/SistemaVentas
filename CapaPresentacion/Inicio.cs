@@ -27,7 +27,7 @@ namespace CapaPresentacion
         private void Inicio_Load(object sender, EventArgs e)
         {
             Negocio oNegocio = new CN_Negocio().obtenerDatos();
-            lblSistema.Text = oNegocio != null ? oNegocio.Nombre : "Sistema Ventas";
+            lblSistema.Text = oNegocio.Nombre != null ? oNegocio.Nombre : "Sistema Ventas";
             List<Permiso> ls = new CN_Permiso().Listar(usuarioActual.IdUsuario);
             foreach (IconMenuItem iconMenu in menu.Items)
             {

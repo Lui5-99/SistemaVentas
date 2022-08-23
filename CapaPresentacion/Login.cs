@@ -79,7 +79,7 @@ namespace CapaPresentacion
         {
             txtUser.Select();
             Negocio oNegocio = new CN_Negocio().obtenerDatos();
-            lblSistema.Text = oNegocio != null ? oNegocio.Nombre : "Sistema Ventas";
+            lblSistema.Text = oNegocio.Nombre != null ? oNegocio.Nombre : "Sistema Ventas";
             bool obtenido = true;
             byte[] image = new CN_Negocio().ObtenerLogo(out obtenido);
             if (image.Length > 0)

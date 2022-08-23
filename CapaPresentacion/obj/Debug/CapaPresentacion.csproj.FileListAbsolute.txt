@@ -75,3 +75,6 @@ C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\ExcelNumb
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmConfiguracion.resources
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProveedor.resources
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProductos.resources
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmConfiguracion.resources
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProductos.resources
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProveedor.resources
