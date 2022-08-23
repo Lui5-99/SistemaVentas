@@ -85,7 +85,7 @@ namespace CapaPresentacion
             }
             TextHTML = TextHTML.Replace("@filas", filas);
 
-            TextHTML = TextHTML.Replace("@montototal", txtMonto.Text.ToString());
+            TextHTML = TextHTML.Replace("@montototal", "$ " + txtMonto.Text.ToString());
 
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.FileName = string.Format("Compra_{0}.pdf", txtNumeroDocto.Text);

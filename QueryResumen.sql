@@ -20,6 +20,7 @@ create table PERMISO(
 IdPermiso int primary key identity,
 IdRol int references ROL(IdRol),
 NombreMenu varchar(100),
+Estado bit,
 FechaRegistro datetime default getdate()
 )
 
@@ -796,11 +797,15 @@ GO
   GO
 
   insert into PERMISO(IdRol,NombreMenu) values
-  (2,'menuVentas'),
-  (2,'menuCompras'),
-  (2,'menuClientes'),
-  (2,'menuProveedores'),
-  (2,'menuAcercade')
+  (2,'menuUsuario',0),
+  (2,'menuMantenedor',0),
+  (2,'menuVentas',1),
+  (2,'menuCompras',1),
+  (2,'menuClientes',1),
+  (2,'menuProveedores',1),
+  (2,'menuReportes'),
+  (2,'menuConfiguracion'),
+  (2,'menuAcercade',1)
 
   GO
 

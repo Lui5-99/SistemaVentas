@@ -82,3 +82,4 @@ C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\BouncyCas
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.dll
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.xml
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmPermisos.resources

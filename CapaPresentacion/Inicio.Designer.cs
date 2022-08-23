@@ -44,14 +44,14 @@
             this.menuProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.MenuReportes = new FontAwesome.Sharp.IconMenuItem();
             this.menuConfiguracion = new FontAwesome.Sharp.IconMenuItem();
+            this.menuNegocio = new FontAwesome.Sharp.IconMenuItem();
+            this.menuPermiso = new FontAwesome.Sharp.IconMenuItem();
             this.menuAcercade = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.lblSistema = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.menuNegocio = new FontAwesome.Sharp.IconMenuItem();
-            this.menuPermiso = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -256,6 +256,26 @@
             this.menuConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuConfiguracion.Click += new System.EventHandler(this.menuConfiguracion_Click);
             // 
+            // menuNegocio
+            // 
+            this.menuNegocio.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.menuNegocio.IconColor = System.Drawing.Color.Black;
+            this.menuNegocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuNegocio.Name = "menuNegocio";
+            this.menuNegocio.Size = new System.Drawing.Size(184, 26);
+            this.menuNegocio.Text = "Negocio";
+            this.menuNegocio.Click += new System.EventHandler(this.menuNegocio_Click);
+            // 
+            // menuPermiso
+            // 
+            this.menuPermiso.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.menuPermiso.IconColor = System.Drawing.Color.Black;
+            this.menuPermiso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuPermiso.Name = "menuPermiso";
+            this.menuPermiso.Size = new System.Drawing.Size(184, 26);
+            this.menuPermiso.Text = "Permisos";
+            this.menuPermiso.Click += new System.EventHandler(this.menuPermiso_Click);
+            // 
             // menuAcercade
             // 
             this.menuAcercade.AutoSize = false;
@@ -325,25 +345,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(63, 15);
             this.lblUsuario.TabIndex = 5;
             this.lblUsuario.Text = "lblUsuario";
-            // 
-            // menuNegocio
-            // 
-            this.menuNegocio.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.menuNegocio.IconColor = System.Drawing.Color.Black;
-            this.menuNegocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuNegocio.Name = "menuNegocio";
-            this.menuNegocio.Size = new System.Drawing.Size(184, 26);
-            this.menuNegocio.Text = "Negocio";
-            this.menuNegocio.Click += new System.EventHandler(this.menuNegocio_Click);
-            // 
-            // menuPermiso
-            // 
-            this.menuPermiso.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.menuPermiso.IconColor = System.Drawing.Color.Black;
-            this.menuPermiso.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuPermiso.Name = "menuPermiso";
-            this.menuPermiso.Size = new System.Drawing.Size(184, 26);
-            this.menuPermiso.Text = "Permisos";
             // 
             // Inicio
             // 

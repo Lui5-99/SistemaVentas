@@ -16,5 +16,22 @@ namespace CapaNegocio
         {
             return oCD_Rol.Listar();
         }
+        public int Registrar(Rol rol, out string mensaje)
+        {
+            mensaje = string.Empty;
+            if(rol.Descripcion == string.Empty)
+            {
+                mensaje += "Ingresa un rol";
+                return 0;
+            }
+            else
+            {
+                return oCD_Rol.Registrar(rol, out mensaje);
+            }
+        }
+        public int IdRol()
+        {
+            return oCD_Rol.IdRol();
+        }
     }
 }

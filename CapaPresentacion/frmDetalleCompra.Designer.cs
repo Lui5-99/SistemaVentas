@@ -285,10 +285,10 @@
             this.btPDF.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
             this.btPDF.IconColor = System.Drawing.Color.IndianRed;
             this.btPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btPDF.IconSize = 20;
+            this.btPDF.IconSize = 15;
             this.btPDF.Location = new System.Drawing.Point(708, 432);
             this.btPDF.Name = "btPDF";
-            this.btPDF.Size = new System.Drawing.Size(91, 30);
+            this.btPDF.Size = new System.Drawing.Size(91, 20);
             this.btPDF.TabIndex = 90;
             this.btPDF.Text = "PDF";
             this.btPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -32,7 +32,7 @@ namespace CapaPresentacion
             foreach (IconMenuItem iconMenu in menu.Items)
             {
                 bool encontrado = ls.Any(
-                    m => m.NombreMenu == iconMenu.Name 
+                    m => m.NombreMenu == iconMenu.Name && m.Estado == true
                     );
                 if (!encontrado) 
                     iconMenu.Visible = false;
@@ -122,6 +122,11 @@ namespace CapaPresentacion
         private void menuNegocio_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmConfiguracion());
+        }
+
+        private void menuPermiso_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmPermisos());
         }
     }
 }
