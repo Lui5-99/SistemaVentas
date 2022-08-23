@@ -119,24 +119,25 @@ namespace CapaDatos
         public bool Eliminar(Categoria oCategoria, out string Mensaje)
         {
             // @IdCategoria int,
-            // @Respuesta bit output,
+            // @Resultado bit output,
             // @Mensaje varchar(500) output
             bool respuesta = false;
-            Mensaje = String.Empty;
+            Mensaje = string.Empty;
             try
             {
                 using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("sp_EliminarCategoria", oConexion);
                     cmd.Parameters.AddWithValue("IdCategoria", oCategoria.IdCategoria);
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
+
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     oConexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                     oConexion.Close();
                 }

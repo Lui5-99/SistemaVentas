@@ -20,5 +20,16 @@ namespace CapaNegocio
         {
             return oCNCompra.Registrar(oCompra, detalleCompra, out mensaje);
         }
+        public Compra obtenerCompra(string numero)
+        {
+            Compra oCompra = oCNCompra.obtenerCompra(numero);
+            if(oCompra.IdCompra != 0)
+            {
+                List<Detalle_Compra> ls = oCNCompra.obtenerDetalle(oCompra.IdCompra);
+                oCompra.oDetalleCompra = ls;
+            }
+            return oCompra;
+        }
+        
     }
 }

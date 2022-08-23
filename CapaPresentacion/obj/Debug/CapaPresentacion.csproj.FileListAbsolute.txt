@@ -78,3 +78,7 @@ C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPrese
 C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmConfiguracion.resources
 C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProductos.resources
 C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProveedor.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.dll
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.xml

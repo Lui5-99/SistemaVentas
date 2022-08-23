@@ -138,7 +138,7 @@ namespace CapaDatos
         public bool Eliminar(Proveedor oProveedor, out string Mensaje)
         {
             // @IdProveedor int,
-            // @Respuesta bit output,
+            // @Resultado bit output,
             // @Mensaje varchar(500) output
             bool respuesta = false;
             Mensaje = String.Empty;
@@ -148,14 +148,14 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("sp_EliminarProveedor", oConexion);
                     cmd.Parameters.AddWithValue("IdProveedor", oProveedor.IdProveedor);
-                    cmd.Parameters.Add("respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     oConexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    respuesta = Convert.ToBoolean(cmd.Parameters["respuesta"].Value);
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
                     oConexion.Close();

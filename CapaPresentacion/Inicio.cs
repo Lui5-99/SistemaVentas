@@ -116,6 +116,11 @@ namespace CapaPresentacion
 
         private void menuConfiguracion_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void menuNegocio_Click(object sender, EventArgs e)
+        {
             AbrirFormulario((IconMenuItem)sender, new frmConfiguracion());
         }
     }

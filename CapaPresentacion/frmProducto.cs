@@ -138,11 +138,11 @@ namespace CapaPresentacion
                         txtCodigo.Text,
                         txtNombre.Text,
                         txtDescripcion.Text,
+                        ((OpcionCombo)cbCategoria.SelectedItem).valor.ToString(),
+                        ((OpcionCombo)cbCategoria.SelectedItem).texto.ToString(),
                         "0",
                         "0.00",
                         "0.00",
-                        ((OpcionCombo)cbCategoria.SelectedItem).valor.ToString(),
-                        ((OpcionCombo)cbCategoria.SelectedItem).texto.ToString(),
                         ((OpcionCombo)cbEstado.SelectedItem).valor.ToString(),
                         ((OpcionCombo)cbEstado.SelectedItem).texto.ToString()
                     });
@@ -320,7 +320,7 @@ namespace CapaPresentacion
                     }
                 }
                 SaveFileDialog saveFile = new SaveFileDialog();
-                saveFile.FileName = string.Format("ListadoProductos_{0}", DateTime.Now.ToString("yyyyMMddHHmm"));
+                saveFile.FileName = string.Format("ListadoProductos_{0}.xlsx", DateTime.Now.ToString("yyyyMMddHHmm"));
                 saveFile.Filter = "Excel Files| *.xlsx; *.xlsm; *.xlsb; *.xls; *‌​.xml";
                 if(saveFile.ShowDialog() == DialogResult.OK)
                 {

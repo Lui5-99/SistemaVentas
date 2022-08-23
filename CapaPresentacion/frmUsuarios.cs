@@ -106,13 +106,9 @@ namespace CapaPresentacion
             if (oUsuario.IdUsuario == 0)
             {
                 if (txtPwd.Text != txtPwd2.Text)
-                {
                     MessageBox.Show("Las contraseñas no coinciden", "Mensaje", MessageBoxButtons.OK);
-                }
                 else
-                {
                     IdUsuariogenerado = new CN_Usuario().Registrar(oUsuario, out Mensaje);
-                }
                 if (IdUsuariogenerado != 0)
                 {
                     dgvDatos.Rows.Add(new object[]
@@ -137,13 +133,9 @@ namespace CapaPresentacion
             else
             {
                 if (txtPwd.Text != txtPwd2.Text)
-                {
                     MessageBox.Show("Las contraseñas no coinciden", "Mensaje", MessageBoxButtons.OK);
-                }
                 else
-                {
                     respuesta = new CN_Usuario().Editar(oUsuario, out Mensaje);
-                }
                 if (respuesta)
                 {
                     DataGridViewRow row = dgvDatos.Rows[Convert.ToInt32(lblIndice.Text)];
