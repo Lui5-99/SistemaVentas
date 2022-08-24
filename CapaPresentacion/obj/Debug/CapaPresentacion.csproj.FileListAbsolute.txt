@@ -83,3 +83,9 @@ C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextshar
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.xml
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmPermisos.resources
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.dll
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\itextsharp.xml
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmPermisos.resources
+C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdCliente.resources

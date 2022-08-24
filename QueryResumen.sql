@@ -783,29 +783,31 @@ GO
  GO
 
 
-  insert into PERMISO(IdRol,NombreMenu) values
-  (1,'menuUsuario'),
-  (1,'menuMantenedor'),
-  (1,'menuVentas'),
-  (1,'menuCompras'),
-  (1,'menuClientes'),
-  (1,'menuProveedores'),
-  (1,'menuReportes'),
-  (1,'menuConfiguracion'),
-  (1,'menuAcercade')
+  insert into PERMISO(IdRol,NombreMenu, Estado) values
+  (1,'menuUsuario',1),
+  (1,'menuMantenedor',1),
+  (1,'menuVentas',1),
+  (1,'menuCompras',1),
+  (1,'menuClientes',1),
+  (1,'menuProveedores',1),
+  (1,'menuReportes',1),
+  (1,'menuConfiguracion',1),
+  (1,'menuAcercade',1)
 
   GO
 
-  insert into PERMISO(IdRol,NombreMenu) values
+  insert into PERMISO(IdRol,NombreMenu,Estado) values
   (2,'menuUsuario',0),
   (2,'menuMantenedor',0),
   (2,'menuVentas',1),
   (2,'menuCompras',1),
   (2,'menuClientes',1),
   (2,'menuProveedores',1),
-  (2,'menuReportes'),
-  (2,'menuConfiguracion'),
+  (2,'menuReportes',0),
+  (2,'menuConfiguracion',0),
   (2,'menuAcercade',1)
+
+  GO
 
   GO
 
