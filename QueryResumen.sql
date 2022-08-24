@@ -809,10 +809,12 @@ GO
 
   GO
 
-  GO
-
 /*insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion) values
 (1,'Luis Arellano','AEBL990905DX5','Zamora #43, Vasco de Quiroga, La Piedad Mich.')*/
 
 insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion) values
 (1,'Sistema Ventas','XAXX010101000','')
+
+GO
+insert into Categoria(Descripcion,Estado) values
+('Por defecto', 1)

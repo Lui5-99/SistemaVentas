@@ -42,7 +42,7 @@
             this.menuDetalleCompra = new FontAwesome.Sharp.IconMenuItem();
             this.menuClientes = new FontAwesome.Sharp.IconMenuItem();
             this.menuProveedores = new FontAwesome.Sharp.IconMenuItem();
-            this.MenuReportes = new FontAwesome.Sharp.IconMenuItem();
+            this.menuReportes = new FontAwesome.Sharp.IconMenuItem();
             this.menuConfiguracion = new FontAwesome.Sharp.IconMenuItem();
             this.menuNegocio = new FontAwesome.Sharp.IconMenuItem();
             this.menuPermiso = new FontAwesome.Sharp.IconMenuItem();
@@ -65,7 +65,7 @@
             this.menuCompras,
             this.menuClientes,
             this.menuProveedores,
-            this.MenuReportes,
+            this.menuReportes,
             this.menuConfiguracion,
             this.menuAcercade});
             this.menu.Location = new System.Drawing.Point(0, 48);
@@ -225,19 +225,19 @@
             this.menuProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuProveedores.Click += new System.EventHandler(this.menuProveedores_Click);
             // 
-            // MenuReportes
+            // menuReportes
             // 
-            this.MenuReportes.AutoSize = false;
-            this.MenuReportes.IconChar = FontAwesome.Sharp.IconChar.BarChart;
-            this.MenuReportes.IconColor = System.Drawing.Color.Black;
-            this.MenuReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MenuReportes.IconSize = 50;
-            this.MenuReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuReportes.Name = "MenuReportes";
-            this.MenuReportes.Size = new System.Drawing.Size(80, 69);
-            this.MenuReportes.Text = "Reportes";
-            this.MenuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.MenuReportes.Click += new System.EventHandler(this.MenuReportes_Click);
+            this.menuReportes.AutoSize = false;
+            this.menuReportes.IconChar = FontAwesome.Sharp.IconChar.BarChart;
+            this.menuReportes.IconColor = System.Drawing.Color.Black;
+            this.menuReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuReportes.IconSize = 50;
+            this.menuReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuReportes.Name = "menuReportes";
+            this.menuReportes.Size = new System.Drawing.Size(80, 69);
+            this.menuReportes.Text = "Reportes";
+            this.menuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuReportes.Click += new System.EventHandler(this.MenuReportes_Click);
             // 
             // menuConfiguracion
             // 
@@ -262,7 +262,7 @@
             this.menuNegocio.IconColor = System.Drawing.Color.Black;
             this.menuNegocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuNegocio.Name = "menuNegocio";
-            this.menuNegocio.Size = new System.Drawing.Size(184, 26);
+            this.menuNegocio.Size = new System.Drawing.Size(122, 22);
             this.menuNegocio.Text = "Negocio";
             this.menuNegocio.Click += new System.EventHandler(this.menuNegocio_Click);
             // 
@@ -272,7 +272,7 @@
             this.menuPermiso.IconColor = System.Drawing.Color.Black;
             this.menuPermiso.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuPermiso.Name = "menuPermiso";
-            this.menuPermiso.Size = new System.Drawing.Size(184, 26);
+            this.menuPermiso.Size = new System.Drawing.Size(122, 22);
             this.menuPermiso.Text = "Permisos";
             this.menuPermiso.Click += new System.EventHandler(this.menuPermiso_Click);
             // 
@@ -381,7 +381,7 @@
         private FontAwesome.Sharp.IconMenuItem menuProveedores;
         private FontAwesome.Sharp.IconMenuItem menuCompras;
         private FontAwesome.Sharp.IconMenuItem menuVentas;
-        private FontAwesome.Sharp.IconMenuItem MenuReportes;
+        private FontAwesome.Sharp.IconMenuItem menuReportes;
         private FontAwesome.Sharp.IconMenuItem menuConfiguracion;
         private System.Windows.Forms.MenuStrip menuTitulo;
         private System.Windows.Forms.Label lblSistema;

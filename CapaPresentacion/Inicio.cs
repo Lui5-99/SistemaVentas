@@ -96,7 +96,7 @@ namespace CapaPresentacion
 
         private void menuRegistrarVenta_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new frmVentas());
+            AbrirFormulario((IconMenuItem)sender, new frmVentas(usuarioActual));
         }
 
         private void menuDetalleVenta_Click(object sender, EventArgs e)
