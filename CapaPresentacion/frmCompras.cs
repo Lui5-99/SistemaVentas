@@ -220,6 +220,7 @@ namespace CapaPresentacion
                 txtIdProveedor.Text = "0";
                 txtDocumento.Text = "";
                 txtRazon.Text = "";
+                txtDocumento.BackColor = Color.White;
                 dgvDatos.Rows.Clear();
                 calcularTotal();
                 limpiarProducto();
@@ -265,7 +266,7 @@ namespace CapaPresentacion
                 if (oProveedor != null)
                 {
                     txtDocumento.BackColor = Color.Honeydew;
-                    txtIdProducto.Text = oProveedor.IdProveedor.ToString();
+                    txtIdProveedor.Text = oProveedor.IdProveedor.ToString();
                     txtDocumento.Text = oProveedor.Documento.ToString();
                     txtRazon.Text = oProveedor.RazonSocial.ToString();
                     txtCodigo.Select();
