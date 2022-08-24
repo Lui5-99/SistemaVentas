@@ -114,7 +114,7 @@
             this.btPagar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btPagar.IconSize = 20;
             this.btPagar.Location = new System.Drawing.Point(830, 389);
-            this.btPagar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btPagar.Margin = new System.Windows.Forms.Padding(2);
             this.btPagar.Name = "btPagar";
             this.btPagar.Size = new System.Drawing.Size(100, 26);
             this.btPagar.TabIndex = 62;
@@ -146,7 +146,7 @@
             this.btAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btAdd.IconSize = 20;
             this.btAdd.Location = new System.Drawing.Point(830, 136);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(99, 93);
             this.btAdd.TabIndex = 62;
@@ -332,7 +332,7 @@
             this.btBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btBuscarProducto.IconSize = 20;
             this.btBuscarProducto.Location = new System.Drawing.Point(160, 46);
-            this.btBuscarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btBuscarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btBuscarProducto.Name = "btBuscarProducto";
             this.btBuscarProducto.Size = new System.Drawing.Size(34, 24);
             this.btBuscarProducto.TabIndex = 54;
@@ -410,7 +410,7 @@
             this.btBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btBusqueda.IconSize = 20;
             this.btBusqueda.Location = new System.Drawing.Point(196, 46);
-            this.btBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.btBusqueda.Name = "btBusqueda";
             this.btBusqueda.Size = new System.Drawing.Size(34, 24);
             this.btBusqueda.TabIndex = 54;
@@ -433,9 +433,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(16, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 17);
+            this.label4.Size = new System.Drawing.Size(52, 17);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Proveedor";
+            this.label4.Text = "Código";
             // 
             // txtDocumento
             // 

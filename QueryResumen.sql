@@ -666,7 +666,7 @@ CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
 GO
 
 
-create procedure usp_RegistrarVenta(
+create procedure sp_RegistrarVenta(
 @IdUsuario int,
 @TipoDocumento varchar(500),
 @NumeroDocumento varchar(500),

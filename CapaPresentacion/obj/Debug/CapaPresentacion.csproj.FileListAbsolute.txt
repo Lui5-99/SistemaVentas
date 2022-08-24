@@ -90,3 +90,5 @@ C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\bin\D
 C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmPermisos.resources
 C:\Users\luis_.DESKTOP-I23S7AV\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdCliente.resources
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdCliente.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmReporteCompras.resources
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.frmReporteVentas.resources

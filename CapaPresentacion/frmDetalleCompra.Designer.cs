@@ -209,9 +209,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Proveedor";
+            this.label6.Text = "Código";
             // 
             // txtDocumento
             // 

@@ -108,7 +108,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("usp_RegistrarVenta", oConexion);
+                    SqlCommand cmd = new SqlCommand("sp_RegistrarVenta", oConexion);
                     cmd.Parameters.AddWithValue("IdUsuario", oVenta.oUsuario.IdUsuario);
                     cmd.Parameters.AddWithValue("TipoDocumento", oVenta.TipoDocumento);
                     cmd.Parameters.AddWithValue("NumeroDocumento", oVenta.NumeroDocumento);
