@@ -11,6 +11,7 @@ using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using CapaEntidad;
 using System.IO;
+using System.Drawing.Printing;
 
 namespace CapaPresentacion
 {
@@ -30,6 +31,7 @@ namespace CapaPresentacion
         }
         private void frmConfiguracion_Load(object sender, EventArgs e)
         {
+            int count = 0;
             bool obtenido = true;
             byte[] image = new CN_Negocio().ObtenerLogo(out obtenido);
             if (image.Length > 0)
@@ -38,6 +40,18 @@ namespace CapaPresentacion
             txtNombre.Text = oNegocio.Nombre;
             txtRFC.Text = oNegocio.RFC;
             txtDireccion.Text = oNegocio.Direccion;
+            foreach (string printer in PrinterSettings.InstalledPrinters)
+            {
+                cbImpresora.Items.Add(new OpcionCombo()
+                {
+                    valor = count,
+                    texto = printer,
+                });
+                count++;
+            }
+            cbImpresora.DisplayMember = "texto";
+            cbImpresora.ValueMember = "valor";
+            cbImpresora.SelectedIndex = 0;
         }
 
         private void btSubir_Click(object sender, EventArgs e)
@@ -67,6 +81,20 @@ namespace CapaPresentacion
             };
             bool respuesta = new CN_Negocio().GuardarDatos(oNegocio, out mensaje);
             if(respuesta)
+                MessageBox.Show("Datos Actualizados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void btImpresora_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+            Negocio oNegocio = new Negocio()
+            {
+                Impresora = ((OpcionCombo)cbImpresora.SelectedItem).texto
+            };
+            bool respuesta = new CN_Negocio().GuardarImpresora(oNegocio, out mensaje);
+            if (respuesta)
                 MessageBox.Show("Datos Actualizados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using CapaPresentacion.Modales;
 
 namespace CapaPresentacion
 {
@@ -137,6 +138,12 @@ namespace CapaPresentacion
         private void menuRepCompras_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmReporteCompras());
+        }
+
+        private void menuAcercade_Click(object sender, EventArgs e)
+        {
+            var modal = new mdAcercade();
+            var result = modal.ShowDialog();
         }
     }
 }

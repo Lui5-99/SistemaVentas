@@ -18,7 +18,7 @@ namespace CapaDatos
                 using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
                 {
                     oConexion.Open();
-                    string query = "Select IdNegocio, Nombre, RFC, Direccion from Negocio where IdNegocio = 1";
+                    string query = "Select IdNegocio, Nombre, RFC, Direccion, Impresora from Negocio where IdNegocio = 1";
                     SqlCommand cmd = new SqlCommand(query, oConexion);
                     cmd.CommandType = CommandType.Text;
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -31,6 +31,7 @@ namespace CapaDatos
                                 Nombre = reader["Nombre"].ToString(),
                                 RFC = reader["RFC"].ToString(),
                                 Direccion = reader["Direccion"].ToString(),
+                                Impresora = reader["Impresora"].ToString(),
                             };
                         }
                     }
@@ -65,6 +66,37 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.Text;
 
                     if(cmd.ExecuteNonQuery() < 1)
+                    {
+                        Mensaje = "No se pudieron guaradar los datos\n";
+                        respuesta = false;
+                    }
+                    oConexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Mensaje += ex.Message + "\n";
+                respuesta = false;
+            }
+            return respuesta;
+        }
+        public bool GuardarImpresora(Negocio oNegocio, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+            bool respuesta = true;
+            try
+            {
+                using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
+                {
+                    oConexion.Open();
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("UPDATE NEGOCIO SET Impresora = @Impresora ");
+                    query.AppendLine("WHERE IdNegocio = 1 ");
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
+                    cmd.Parameters.AddWithValue("@Impresora", oNegocio.Impresora);
+                    cmd.CommandType = CommandType.Text;
+
+                    if (cmd.ExecuteNonQuery() < 1)
                     {
                         Mensaje = "No se pudieron guaradar los datos\n";
                         respuesta = false;

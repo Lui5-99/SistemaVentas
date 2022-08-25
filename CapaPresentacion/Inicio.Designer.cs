@@ -43,6 +43,8 @@
             this.menuClientes = new FontAwesome.Sharp.IconMenuItem();
             this.menuProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menuReportes = new FontAwesome.Sharp.IconMenuItem();
+            this.menuRepVentas = new FontAwesome.Sharp.IconMenuItem();
+            this.menuRepCompras = new FontAwesome.Sharp.IconMenuItem();
             this.menuConfiguracion = new FontAwesome.Sharp.IconMenuItem();
             this.menuNegocio = new FontAwesome.Sharp.IconMenuItem();
             this.menuPermiso = new FontAwesome.Sharp.IconMenuItem();
@@ -52,8 +54,6 @@
             this.contenedor = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.menuRepVentas = new FontAwesome.Sharp.IconMenuItem();
-            this.menuRepCompras = new FontAwesome.Sharp.IconMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -244,6 +244,26 @@
             this.menuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuReportes.Click += new System.EventHandler(this.MenuReportes_Click);
             // 
+            // menuRepVentas
+            // 
+            this.menuRepVentas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.menuRepVentas.IconColor = System.Drawing.Color.Black;
+            this.menuRepVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuRepVentas.Name = "menuRepVentas";
+            this.menuRepVentas.Size = new System.Drawing.Size(122, 22);
+            this.menuRepVentas.Text = "Ventas";
+            this.menuRepVentas.Click += new System.EventHandler(this.menuRepVentas_Click);
+            // 
+            // menuRepCompras
+            // 
+            this.menuRepCompras.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.menuRepCompras.IconColor = System.Drawing.Color.Black;
+            this.menuRepCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuRepCompras.Name = "menuRepCompras";
+            this.menuRepCompras.Size = new System.Drawing.Size(122, 22);
+            this.menuRepCompras.Text = "Compras";
+            this.menuRepCompras.Click += new System.EventHandler(this.menuRepCompras_Click);
+            // 
             // menuConfiguracion
             // 
             this.menuConfiguracion.AutoSize = false;
@@ -293,6 +313,7 @@
             this.menuAcercade.Size = new System.Drawing.Size(80, 69);
             this.menuAcercade.Text = "Acerca de";
             this.menuAcercade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuAcercade.Click += new System.EventHandler(this.menuAcercade_Click);
             // 
             // menuTitulo
             // 
@@ -350,26 +371,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(63, 15);
             this.lblUsuario.TabIndex = 5;
             this.lblUsuario.Text = "lblUsuario";
-            // 
-            // menuRepVentas
-            // 
-            this.menuRepVentas.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.menuRepVentas.IconColor = System.Drawing.Color.Black;
-            this.menuRepVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuRepVentas.Name = "menuRepVentas";
-            this.menuRepVentas.Size = new System.Drawing.Size(184, 26);
-            this.menuRepVentas.Text = "Ventas";
-            this.menuRepVentas.Click += new System.EventHandler(this.menuRepVentas_Click);
-            // 
-            // menuRepCompras
-            // 
-            this.menuRepCompras.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.menuRepCompras.IconColor = System.Drawing.Color.Black;
-            this.menuRepCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuRepCompras.Name = "menuRepCompras";
-            this.menuRepCompras.Size = new System.Drawing.Size(184, 26);
-            this.menuRepCompras.Text = "Compras";
-            this.menuRepCompras.Click += new System.EventHandler(this.menuRepCompras_Click);
             // 
             // Inicio
             // 

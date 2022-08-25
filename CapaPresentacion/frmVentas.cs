@@ -335,13 +335,11 @@ namespace CapaPresentacion
             }
             if (txtCodigoCliente.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Debe ingresar el código del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                txtCodigoCliente.Text = "0000";
             }
             if (txtnombrecliente.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Debe ingresar el nombre del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                txtnombrecliente.Text = "Ventas Publico";
             }
             if (dgvDatos.Rows.Count < 1)
             {
@@ -391,6 +389,8 @@ namespace CapaPresentacion
                     "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                     Clipboard.SetText(numCorrelativo);
+                generarTicket();
+                txtCodigoCliente.BackColor = Color.White;
                 txtCodigoCliente.Text = "";
                 txtnombrecliente.Text = "";
                 dgvDatos.Rows.Clear();
@@ -402,6 +402,47 @@ namespace CapaPresentacion
             }
             else
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+        private void generarTicket()
+        {
+            Negocio oNegocio = new CN_Negocio().obtenerDatos();
+            try
+            {
+                CrearTicket ticket = new CrearTicket();
+                ticket.TextoIzquierda(" ");
+                ticket.TextoCentro(oNegocio.Nombre);
+                ticket.TextoCentro(oNegocio.RFC);
+                ticket.TextoCentro(oNegocio.Direccion);
+                ticket.TextoCentro("TICKET");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda("Atendio: " + _Usuario.NombreCompleto);
+                ticket.TextoExtremos("FECHA : " + txtFecha.Text, "HORA : " + DateTime.Now.ToString("HH:mm"));
+                ticket.TextoIzquierda(" ");
+                ticket.EncabezadoVenta();
+                ticket.lineasGuio();
+                foreach (DataGridViewRow row in dgvDatos.Rows)
+                {
+                    ticket.AgregaArticulo(row.Cells["Producto"].Value.ToString(), Convert.ToInt32(row.Cells["Cantidad"].Value.ToString()), decimal.Parse(row.Cells["SubTotal"].Value.ToString()));
+                }
+                ticket.lineasIgual();
+                ticket.AgregarTotales("          TOTAL VENTA : $ ", decimal.Parse(txtPagar.Text));
+                ticket.AgregarTotales("          TOTAL PAGO  : $ ", decimal.Parse(txtpagocon.Text));
+                ticket.TextoIzquierda(" ");
+                ticket.AgregarTotales("          CAMBIO      : $ ", decimal.Parse(txtcambio.Text));
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.TextoIzquierda(" ");
+                ticket.CortaTicket();
+                ticket.ImprimirTicket(oNegocio.Impresora);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

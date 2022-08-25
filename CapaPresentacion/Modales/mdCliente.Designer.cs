@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdCliente));
             this.btBusqueda = new FontAwesome.Sharp.IconButton();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,7 @@
             this.btBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btBusqueda.IconSize = 20;
             this.btBusqueda.Location = new System.Drawing.Point(438, 31);
-            this.btBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.btBusqueda.Name = "btBusqueda";
             this.btBusqueda.Size = new System.Drawing.Size(34, 24);
             this.btBusqueda.TabIndex = 90;
@@ -84,7 +85,7 @@
             this.Nombre});
             this.dgvDatos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvDatos.Location = new System.Drawing.Point(2, 101);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
@@ -138,7 +139,7 @@
             this.btLimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btLimpiarbuscador.IconSize = 20;
             this.btLimpiarbuscador.Location = new System.Drawing.Point(478, 30);
-            this.btLimpiarbuscador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btLimpiarbuscador.Margin = new System.Windows.Forms.Padding(2);
             this.btLimpiarbuscador.Name = "btLimpiarbuscador";
             this.btLimpiarbuscador.Size = new System.Drawing.Size(34, 24);
             this.btLimpiarbuscador.TabIndex = 91;
@@ -150,7 +151,7 @@
             // txtBusqueda
             // 
             this.txtBusqueda.Location = new System.Drawing.Point(260, 35);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(174, 20);
             this.txtBusqueda.TabIndex = 89;
@@ -160,7 +161,7 @@
             // 
             this.cbBusqueda.FormattingEnabled = true;
             this.cbBusqueda.Location = new System.Drawing.Point(76, 35);
-            this.cbBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.cbBusqueda.Name = "cbBusqueda";
             this.cbBusqueda.Size = new System.Drawing.Size(174, 21);
             this.cbBusqueda.TabIndex = 88;
@@ -187,10 +188,11 @@
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.cbBusqueda);
             this.Controls.Add(this.label10);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mdCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "mdClientes";
+            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.mdCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);

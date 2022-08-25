@@ -148,7 +148,8 @@ IdNegocio int primary key,
 Nombre varchar(60),
 RFC varchar(60),
 Direccion varchar(60),
-Logo varbinary(max) NULL
+Logo varbinary(max) NULL, 
+Impresora varchar(60)
 )
 
 go
@@ -812,8 +813,8 @@ GO
 /*insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion) values
 (1,'Luis Arellano','AEBL990905DX5','Zamora #43, Vasco de Quiroga, La Piedad Mich.')*/
 
-insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion) values
-(1,'Sistema Ventas','XAXX010101000','')
+insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion, Impresora) values
+(1,'Sistema Ventas','XAXX010101000','','')
 
 GO
 insert into Categoria(Descripcion,Estado) values

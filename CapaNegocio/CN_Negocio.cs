@@ -29,6 +29,16 @@ namespace CapaNegocio
             else
                 return oCD_Negocio.GuardarDatos(oNegocio, out Mensaje);
         }
+        public bool GuardarImpresora(Negocio oNegocio, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+            if (oNegocio.Impresora == string.Empty)
+                Mensaje += "Es necesaria el Nombre\n";
+            if (Mensaje != string.Empty)
+                return false;
+            else
+                return oCD_Negocio.GuardarImpresora(oNegocio, out Mensaje);
+        }
         public byte[] ObtenerLogo(out bool obtenido)
         {
             return oCD_Negocio.ObtenerLogo(out obtenido);

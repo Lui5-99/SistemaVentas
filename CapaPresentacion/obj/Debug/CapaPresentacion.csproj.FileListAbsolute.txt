@@ -92,3 +92,4 @@ C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\SistemaVe
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\bin\Debug\SistemaVentas.pdb
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\SistemaVentas.exe
 C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\SistemaVentas.pdb
+C:\Users\Usuario\source\repos\SistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdAcercade.resources

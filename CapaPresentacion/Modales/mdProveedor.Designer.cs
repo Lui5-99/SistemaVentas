@@ -30,16 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdProveedor));
             this.btBusqueda = new FontAwesome.Sharp.IconButton();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btLimpiarbuscador = new FontAwesome.Sharp.IconButton();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.cbBusqueda = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,10 +56,10 @@
             this.btBusqueda.IconColor = System.Drawing.Color.Black;
             this.btBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btBusqueda.IconSize = 20;
-            this.btBusqueda.Location = new System.Drawing.Point(583, 37);
-            this.btBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btBusqueda.Location = new System.Drawing.Point(437, 30);
+            this.btBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.btBusqueda.Name = "btBusqueda";
-            this.btBusqueda.Size = new System.Drawing.Size(45, 30);
+            this.btBusqueda.Size = new System.Drawing.Size(34, 24);
             this.btBusqueda.TabIndex = 84;
             this.btBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -84,8 +85,8 @@
             this.Documento,
             this.RazonSocial});
             this.dgvDatos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvDatos.Location = new System.Drawing.Point(1, 123);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvDatos.Location = new System.Drawing.Point(1, 100);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
@@ -97,69 +98,9 @@
             this.dgvDatos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvDatos.RowTemplate.Height = 28;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(693, 242);
+            this.dgvDatos.Size = new System.Drawing.Size(520, 197);
             this.dgvDatos.TabIndex = 79;
             this.dgvDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellDoubleClick);
-            // 
-            // btLimpiarbuscador
-            // 
-            this.btLimpiarbuscador.BackColor = System.Drawing.Color.White;
-            this.btLimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btLimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btLimpiarbuscador.FlatAppearance.BorderSize = 0;
-            this.btLimpiarbuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btLimpiarbuscador.ForeColor = System.Drawing.Color.White;
-            this.btLimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btLimpiarbuscador.IconColor = System.Drawing.Color.Black;
-            this.btLimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btLimpiarbuscador.IconSize = 20;
-            this.btLimpiarbuscador.Location = new System.Drawing.Point(636, 36);
-            this.btLimpiarbuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btLimpiarbuscador.Name = "btLimpiarbuscador";
-            this.btLimpiarbuscador.Size = new System.Drawing.Size(45, 30);
-            this.btLimpiarbuscador.TabIndex = 85;
-            this.btLimpiarbuscador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btLimpiarbuscador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btLimpiarbuscador.UseVisualStyleBackColor = false;
-            this.btLimpiarbuscador.Click += new System.EventHandler(this.btLimpiarbuscador_Click);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Location = new System.Drawing.Point(345, 42);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(231, 22);
-            this.txtBusqueda.TabIndex = 83;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // cbBusqueda
-            // 
-            this.cbBusqueda.FormattingEnabled = true;
-            this.cbBusqueda.Location = new System.Drawing.Point(100, 42);
-            this.cbBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbBusqueda.Name = "cbBusqueda";
-            this.cbBusqueda.Size = new System.Drawing.Size(231, 24);
-            this.cbBusqueda.TabIndex = 82;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(4, 44);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 16);
-            this.label11.TabIndex = 81;
-            this.label11.Text = "Buscar por";
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1, 1);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(693, 100);
-            this.label10.TabIndex = 80;
-            this.label10.Text = "Lista de proveedores";
             // 
             // Id
             // 
@@ -186,11 +127,73 @@
             this.RazonSocial.ReadOnly = true;
             this.RazonSocial.Width = 180;
             // 
+            // btLimpiarbuscador
+            // 
+            this.btLimpiarbuscador.BackColor = System.Drawing.Color.White;
+            this.btLimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btLimpiarbuscador.FlatAppearance.BorderSize = 0;
+            this.btLimpiarbuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btLimpiarbuscador.ForeColor = System.Drawing.Color.White;
+            this.btLimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btLimpiarbuscador.IconColor = System.Drawing.Color.Black;
+            this.btLimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btLimpiarbuscador.IconSize = 20;
+            this.btLimpiarbuscador.Location = new System.Drawing.Point(477, 29);
+            this.btLimpiarbuscador.Margin = new System.Windows.Forms.Padding(2);
+            this.btLimpiarbuscador.Name = "btLimpiarbuscador";
+            this.btLimpiarbuscador.Size = new System.Drawing.Size(34, 24);
+            this.btLimpiarbuscador.TabIndex = 85;
+            this.btLimpiarbuscador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btLimpiarbuscador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btLimpiarbuscador.UseVisualStyleBackColor = false;
+            this.btLimpiarbuscador.Click += new System.EventHandler(this.btLimpiarbuscador_Click);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(259, 34);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(174, 20);
+            this.txtBusqueda.TabIndex = 83;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // cbBusqueda
+            // 
+            this.cbBusqueda.FormattingEnabled = true;
+            this.cbBusqueda.Location = new System.Drawing.Point(75, 34);
+            this.cbBusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.cbBusqueda.Name = "cbBusqueda";
+            this.cbBusqueda.Size = new System.Drawing.Size(174, 21);
+            this.cbBusqueda.TabIndex = 82;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(3, 36);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 13);
+            this.label11.TabIndex = 81;
+            this.label11.Text = "Buscar por";
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1, 1);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(520, 81);
+            this.label10.TabIndex = 80;
+            this.label10.Text = "Lista de proveedores";
+            // 
             // mdProveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 368);
+            this.ClientSize = new System.Drawing.Size(522, 299);
             this.Controls.Add(this.btBusqueda);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.btLimpiarbuscador);
@@ -198,10 +201,10 @@
             this.Controls.Add(this.cbBusqueda);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mdProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "mdProveedor";
+            this.Text = "Proveedor";
             this.Load += new System.EventHandler(this.mdProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
