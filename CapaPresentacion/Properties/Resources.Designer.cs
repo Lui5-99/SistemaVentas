@@ -132,7 +132,6 @@ namespace CapaPresentacion.Properties {
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html&gt;
         ///&lt;head&gt;
-        ///    &lt;!--sistema creado por el canal yt codigo estudiante--&gt;
         ///    &lt;title&gt;Web Page Design&lt;/title&gt;
         ///    &lt;style&gt;
         ///        table.border {
@@ -148,11 +147,39 @@ namespace CapaPresentacion.Properties {
         ///            table.border td {
         ///                text-align: center;
         ///                padding: 5px;
-        ///                border: 1px solid b [resto de la cadena truncado]&quot;;.
+        ///                border: 1px solid black;
+        ///            }
+        ///    &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;tab [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string PlantillaVenta {
             get {
                 return ResourceManager.GetString("PlantillaVenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;html&gt;
+        ///    &lt;body&gt;
+        ///        &lt;table border=&quot;0&quot; width=&quot;300&quot;&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td colspan=&quot;2&quot;&gt;*************************************&lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt;
+        ///                &lt;td align=&quot;center&quot; colspan=&quot;2&quot; style=&quot;font-weight:bold&quot;&gt;
+        ///                    ¡nombreempresa!
+        ///                &lt;/td&gt;
+        ///            &lt;/tr&gt;
+        ///            &lt;tr&gt; &lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+        ///            &lt;tr&gt; &lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+        ///            &lt;tr style=&quot;font-size:13px&quot;&gt;
+        ///                &lt;td align=&quot;center&quot; co [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Ticket {
+            get {
+                return ResourceManager.GetString("Ticket", resourceCulture);
             }
         }
     }

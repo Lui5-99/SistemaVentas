@@ -90,10 +90,6 @@ namespace CapaPresentacion
             AbrirFormulario((IconMenuItem)sender, new frmProveedores());
         }
 
-        private void MenuReportes_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void menuRegistrarVenta_Click(object sender, EventArgs e)
         {

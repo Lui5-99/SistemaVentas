@@ -242,7 +242,6 @@
             this.menuReportes.Size = new System.Drawing.Size(80, 69);
             this.menuReportes.Text = "Reportes";
             this.menuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menuReportes.Click += new System.EventHandler(this.MenuReportes_Click);
             // 
             // menuRepVentas
             // 

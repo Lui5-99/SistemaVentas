@@ -389,7 +389,7 @@ namespace CapaPresentacion
                     "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                     Clipboard.SetText(numCorrelativo);
-                generarTicket();
+                generarTicket(numCorrelativo);
                 txtCodigoCliente.BackColor = Color.White;
                 txtCodigoCliente.Text = "";
                 txtnombrecliente.Text = "";
@@ -403,45 +403,16 @@ namespace CapaPresentacion
             else
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-        private void generarTicket()
+        private void generarTicket(string codigoVenta)
         {
-            Negocio oNegocio = new CN_Negocio().obtenerDatos();
-            try
+            if(codigoVenta != null)
             {
-                CrearTicket ticket = new CrearTicket();
-                ticket.TextoIzquierda(" ");
-                ticket.TextoCentro(oNegocio.Nombre);
-                ticket.TextoCentro(oNegocio.RFC);
-                ticket.TextoCentro(oNegocio.Direccion);
-                ticket.TextoCentro("TICKET");
-                ticket.TextoIzquierda(" ");
-                ticket.TextoIzquierda(" ");
-                ticket.TextoIzquierda("Atendio: " + _Usuario.NombreCompleto);
-                ticket.TextoExtremos("FECHA : " + txtFecha.Text, "HORA : " + DateTime.Now.ToString("HH:mm"));
-                ticket.TextoIzquierda(" ");
-                ticket.EncabezadoVenta();
-                ticket.lineasGuio();
-                foreach (DataGridViewRow row in dgvDatos.Rows)
+                var dialog = MessageBox.Show("La venta fue registrada\n¿Desea imprimir el ticket ahora?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(dialog == DialogResult.Yes)
                 {
-                    ticket.AgregaArticulo(row.Cells["Producto"].Value.ToString(), Convert.ToInt32(row.Cells["Cantidad"].Value.ToString()), decimal.Parse(row.Cells["SubTotal"].Value.ToString()));
+                    ImprimirVenta imp = new ImprimirVenta(codigoVenta);
+                    imp.ShowDialog();
                 }
-                ticket.lineasIgual();
-                ticket.AgregarTotales("          TOTAL VENTA : $ ", decimal.Parse(txtPagar.Text));
-                ticket.AgregarTotales("          TOTAL PAGO  : $ ", decimal.Parse(txtpagocon.Text));
-                ticket.TextoIzquierda(" ");
-                ticket.AgregarTotales("          CAMBIO      : $ ", decimal.Parse(txtcambio.Text));
-                ticket.TextoIzquierda(" ");
-                ticket.TextoIzquierda(" ");
-                ticket.TextoIzquierda(" ");
-                ticket.TextoIzquierda(" ");
-                ticket.TextoIzquierda(" ");
-                ticket.TextoIzquierda(" ");
-                ticket.CortaTicket();
-                ticket.ImprimirTicket(oNegocio.Impresora);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

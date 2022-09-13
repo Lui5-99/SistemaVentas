@@ -23,10 +23,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void frmDetalleVenta_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
