@@ -44,7 +44,7 @@ namespace CapaPresentacion.Modales
                 dgvDatos.Rows.Add(new object[]
                 {
                     item.IdCliente,
-                    item.Documento,
+                    item.Codigo,
                     item.NombreCompleto,
                 });
             }
@@ -59,7 +59,7 @@ namespace CapaPresentacion.Modales
                 _Cliente = new Cliente()
                 {
                     IdCliente = Convert.ToInt32(dgvDatos.Rows[iRow].Cells["Id"].Value.ToString()),
-                    Documento = dgvDatos.Rows[iRow].Cells["Documento"].Value.ToString(),
+                    Codigo = dgvDatos.Rows[iRow].Cells["Documento"].Value.ToString(),
                     NombreCompleto = dgvDatos.Rows[iRow].Cells["Nombre"].Value.ToString()
 
                 };

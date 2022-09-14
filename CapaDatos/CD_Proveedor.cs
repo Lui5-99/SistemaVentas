@@ -19,7 +19,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT IdProveedor, Documento, RazonSocial, Correo, Telefono, Estado FROM Proveedor");
+                    query.AppendLine("SELECT IdProveedor, Codigo, RazonSocial, Correo, Telefono, Estado FROM Proveedor");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
                     cmd.CommandType = CommandType.Text;
                     oConexion.Open();
@@ -32,7 +32,7 @@ namespace CapaDatos
                                 ls.Add(new Proveedor()
                                 {
                                     IdProveedor = Convert.ToInt32(reader["IdProveedor"]),
-                                    Documento = reader["Documento"].ToString(),
+                                    Codigo = reader["Codigo"].ToString(),
                                     RazonSocial = reader["RazonSocial"].ToString(),
                                     Correo = reader["Correo"].ToString(),
                                     Telefono = reader["Telefono"].ToString(),
@@ -53,7 +53,7 @@ namespace CapaDatos
         }
         public int Registrar(Proveedor oProveedor, out string Mensaje)
         {
-            //@Documento varchar(50),
+            //@Codigo varchar(50),
             //@RazonSocial varchar(50),
             //@Correo varchar(50),
             //@Telefono varchar(50),
@@ -67,7 +67,7 @@ namespace CapaDatos
                 using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("sp_RegistrarProveedor", oConexion);
-                    cmd.Parameters.AddWithValue("Documento", oProveedor.Documento);
+                    cmd.Parameters.AddWithValue("Codigo", oProveedor.Codigo);
                     cmd.Parameters.AddWithValue("RazonSocial", oProveedor.RazonSocial);
                     cmd.Parameters.AddWithValue("Correo", oProveedor.Correo);
                     cmd.Parameters.AddWithValue("Telefono", oProveedor.Telefono);
@@ -95,7 +95,7 @@ namespace CapaDatos
         public bool Editar(Proveedor oProveedor, out string Mensaje)
         {
             //@IdProveedor int,
-            //@Documento varchar(50),
+            //@Codigo varchar(50),
             //@RazonSocial varchar(50),
             //@Correo varchar(50),
             //@Telefono varchar(50),
@@ -110,7 +110,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("sp_ModificarProveedor", oConexion);
                     cmd.Parameters.AddWithValue("IdProveedor", oProveedor.IdProveedor);
-                    cmd.Parameters.AddWithValue("Documento", oProveedor.Documento);
+                    cmd.Parameters.AddWithValue("Codigo", oProveedor.Codigo);
                     cmd.Parameters.AddWithValue("RazonSocial", oProveedor.RazonSocial);
                     cmd.Parameters.AddWithValue("Correo", oProveedor.Correo);
                     cmd.Parameters.AddWithValue("Telefono", oProveedor.Telefono);

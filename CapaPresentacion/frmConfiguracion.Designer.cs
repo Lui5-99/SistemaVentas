@@ -31,9 +31,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btImpresora = new FontAwesome.Sharp.IconButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbImpresora = new System.Windows.Forms.ComboBox();
             this.btGuardar = new FontAwesome.Sharp.IconButton();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtRFC = new System.Windows.Forms.TextBox();
@@ -44,6 +41,10 @@
             this.btSubir = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -73,9 +74,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btImpresora);
+            this.groupBox1.Controls.Add(this.txtCorreo);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cbImpresora);
             this.groupBox1.Controls.Add(this.btGuardar);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.txtRFC);
@@ -92,44 +94,6 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             // 
-            // btImpresora
-            // 
-            this.btImpresora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btImpresora.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btImpresora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImpresora.ForeColor = System.Drawing.Color.White;
-            this.btImpresora.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btImpresora.IconColor = System.Drawing.Color.White;
-            this.btImpresora.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btImpresora.IconSize = 20;
-            this.btImpresora.Location = new System.Drawing.Point(17, 263);
-            this.btImpresora.Margin = new System.Windows.Forms.Padding(2);
-            this.btImpresora.Name = "btImpresora";
-            this.btImpresora.Size = new System.Drawing.Size(164, 29);
-            this.btImpresora.TabIndex = 26;
-            this.btImpresora.Text = "Guardar impresora";
-            this.btImpresora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btImpresora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btImpresora.UseVisualStyleBackColor = false;
-            this.btImpresora.Click += new System.EventHandler(this.btImpresora_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 218);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 13);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Impresoras disponibles";
-            // 
-            // cbImpresora
-            // 
-            this.cbImpresora.FormattingEnabled = true;
-            this.cbImpresora.Location = new System.Drawing.Point(17, 237);
-            this.cbImpresora.Name = "cbImpresora";
-            this.cbImpresora.Size = new System.Drawing.Size(497, 21);
-            this.cbImpresora.TabIndex = 24;
-            // 
             // btGuardar
             // 
             this.btGuardar.BackColor = System.Drawing.Color.Green;
@@ -140,7 +104,7 @@
             this.btGuardar.IconColor = System.Drawing.Color.White;
             this.btGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btGuardar.IconSize = 20;
-            this.btGuardar.Location = new System.Drawing.Point(190, 178);
+            this.btGuardar.Location = new System.Drawing.Point(191, 267);
             this.btGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(324, 29);
@@ -153,7 +117,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(188, 151);
+            this.txtDireccion.Location = new System.Drawing.Point(189, 151);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(326, 20);
@@ -218,7 +182,7 @@
             this.btSubir.IconColor = System.Drawing.Color.White;
             this.btSubir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btSubir.IconSize = 20;
-            this.btSubir.Location = new System.Drawing.Point(20, 178);
+            this.btSubir.Location = new System.Drawing.Point(21, 267);
             this.btSubir.Margin = new System.Windows.Forms.Padding(2);
             this.btSubir.Name = "btSubir";
             this.btSubir.Size = new System.Drawing.Size(164, 29);
@@ -232,7 +196,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 28);
+            this.label2.Location = new System.Drawing.Point(20, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 1;
@@ -241,12 +205,50 @@
             // picLogo
             // 
             this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picLogo.Location = new System.Drawing.Point(20, 47);
+            this.picLogo.Location = new System.Drawing.Point(20, 61);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(164, 126);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(189, 193);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(326, 20);
+            this.txtTelefono.TabIndex = 25;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(187, 177);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Teléfono";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(189, 234);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(326, 20);
+            this.txtCorreo.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(189, 218);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Correo";
             // 
             // frmConfiguracion
             // 
@@ -282,8 +284,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbImpresora;
-        private FontAwesome.Sharp.IconButton btImpresora;
     }
 }

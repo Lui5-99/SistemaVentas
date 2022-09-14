@@ -30,6 +30,10 @@ namespace CapaNegocio
             }
             return oCompra;
         }
-        
+        public List<Compra> Listar()
+        {
+            return oCNCompra.Listar();
+        }
+
     }
 }

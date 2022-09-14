@@ -19,7 +19,7 @@ namespace CapaNegocio
         public int Registrar(Cliente oCliente, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oCliente.Documento == string.Empty)
+            if (oCliente.Codigo == string.Empty)
                 Mensaje += "Es necesario el Cliente\n";
             if (oCliente.NombreCompleto == string.Empty)
                 Mensaje += "Es necesario el nombre del Cliente\n";
@@ -31,7 +31,7 @@ namespace CapaNegocio
         public bool Editar(Cliente oCliente, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oCliente.Documento == string.Empty)
+            if (oCliente.Codigo == string.Empty)
                 Mensaje += "Es necesario el Cliente\n";
             if (oCliente.NombreCompleto == string.Empty)
                 Mensaje += "Es necesario el nombre del Cliente\n";
@@ -43,7 +43,7 @@ namespace CapaNegocio
         public bool Eliminar(Cliente oCliente, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oCliente.Documento == string.Empty)
+            if (oCliente.Codigo == string.Empty)
                 Mensaje += "Es necesario el Cliente\n";
             if (oCliente.NombreCompleto == string.Empty)
                 Mensaje += "Es necesario el nombre del Cliente\n";

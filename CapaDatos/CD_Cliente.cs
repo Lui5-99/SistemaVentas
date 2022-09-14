@@ -18,7 +18,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT IdCliente, Documento, NombreCompleto, Correo, Telefono, Estado FROM CLIENTE");
+                    query.AppendLine("SELECT IdCliente, Codigo, NombreCompleto, Correo, Telefono, Estado FROM CLIENTE");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
                     cmd.CommandType = CommandType.Text;
                     oConexion.Open();
@@ -31,7 +31,7 @@ namespace CapaDatos
                                 ls.Add(new Cliente()
                                 {
                                     IdCliente = Convert.ToInt32(reader["IdCliente"]),
-                                    Documento = reader["Documento"].ToString(),
+                                    Codigo = reader["Codigo"].ToString(),
                                     NombreCompleto = reader["NombreCompleto"].ToString(),
                                     Correo = reader["Correo"].ToString(),
                                     Telefono = reader["Telefono"].ToString(),
@@ -52,7 +52,7 @@ namespace CapaDatos
         }
         public int Registrar(Cliente oCliente, out string Mensaje)
         {
-            //@Documento varchar(50),
+            //@Codigo varchar(50),
             //@NombreCompleto varchar(50),
             //@Correo varchar(50),
             //@Telefono varchar(50),
@@ -66,7 +66,7 @@ namespace CapaDatos
                 using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("sp_RegistrarCliente", oConexion);
-                    cmd.Parameters.AddWithValue("Documento", oCliente.Documento);
+                    cmd.Parameters.AddWithValue("Codigo", oCliente.Codigo);
                     cmd.Parameters.AddWithValue("NombreCompleto", oCliente.NombreCompleto);
                     cmd.Parameters.AddWithValue("Correo", oCliente.Correo);
                     cmd.Parameters.AddWithValue("Telefono", oCliente.Telefono);
@@ -94,7 +94,7 @@ namespace CapaDatos
         public bool Editar(Cliente oCliente, out string Mensaje)
         {
             //@IdCliente int,
-            //@Documento varchar(50),
+            //@Codigo varchar(50),
             //@NombreCompleto varchar(50),
             //@Correo varchar(50),
             //@Telefono varchar(50),
@@ -109,7 +109,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("sp_ModificarCliente", oConexion);
                     cmd.Parameters.AddWithValue("IdCliente", oCliente.IdCliente);
-                    cmd.Parameters.AddWithValue("Documento", oCliente.Documento);
+                    cmd.Parameters.AddWithValue("Codigo", oCliente.Codigo);
                     cmd.Parameters.AddWithValue("NombreCompleto", oCliente.NombreCompleto);
                     cmd.Parameters.AddWithValue("Correo", oCliente.Correo);
                     cmd.Parameters.AddWithValue("Telefono", oCliente.Telefono);

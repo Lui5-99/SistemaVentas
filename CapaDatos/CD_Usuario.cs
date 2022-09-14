@@ -19,7 +19,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT U.IdUsuario, U.Documento, U.NombreCompleto, U.Correo, U.Clave, U.Estado, ");
+                    query.AppendLine("SELECT U.IdUsuario, U.Codigo, U.NombreCompleto, U.Correo, U.Clave, U.Estado, ");
                     query.AppendLine("R.IdRol, R.Descripcion ");
                     query.AppendLine("FROM USUARIO U ");
                     query.AppendLine("INNER JOIN ROL R ON R.IdRol = U.IdRol ");
@@ -33,7 +33,7 @@ namespace CapaDatos
                             ls.Add(new Usuario()
                             {
                                 IdUsuario = Convert.ToInt32(reader["IdUsuario"]),
-                                Documento = reader["Documento"].ToString(),
+                                Codigo = reader["Codigo"].ToString(),
                                 NombreCompleto = reader["NombreCompleto"].ToString(),
                                 Correo = reader["Correo"].ToString(),
                                 Clave = reader["Clave"].ToString(),
@@ -57,14 +57,14 @@ namespace CapaDatos
         }
         public int Registrar(Usuario oUsuario, out string Mensaje)
         {
-        // @Documento varchar(50),
-        // @NombreCompleto varchar(100),
-        // @Correo varchar(100),
-        // @Clave varchar(100),
-        // @IdRol int,
-        // @Estado bit,
-        // @IdUsuarioResultado int output,
-        // @Mensaje varchar(500) output
+            // @Codigo varchar(50),
+            // @NombreCompleto varchar(100),
+            // @Correo varchar(100),
+            // @Clave varchar(100),
+            // @IdRol int,
+            // @Estado bit,
+            // @IdUsuarioResultado int output,
+            // @Mensaje varchar(500) output
             int idusuariogenerado = 0;
             Mensaje = String.Empty;
             try
@@ -72,7 +72,7 @@ namespace CapaDatos
                 using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARUSUARIO", oConexion);
-                    cmd.Parameters.AddWithValue("Documento", oUsuario.Documento);
+                    cmd.Parameters.AddWithValue("Codigo", oUsuario.Codigo);
                     cmd.Parameters.AddWithValue("NombreCompleto", oUsuario.NombreCompleto);
                     cmd.Parameters.AddWithValue("Correo", oUsuario.Correo);
                     cmd.Parameters.AddWithValue("Clave", oUsuario.Clave);
@@ -102,7 +102,7 @@ namespace CapaDatos
         public bool Editar(Usuario oUsuario, out string Mensaje)
         {
             // @IdUsuario int,
-            // @Documento varchar(50),
+            // @Codigo varchar(50),
             // @NombreCompleto varchar(100),
             // @Correo varchar(100),
             // @Clave varchar(100),
@@ -118,7 +118,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("SP_EDITARUSUARIO", oConexion);
                     cmd.Parameters.AddWithValue("IdUsuario", oUsuario.IdUsuario);
-                    cmd.Parameters.AddWithValue("Documento", oUsuario.Documento);
+                    cmd.Parameters.AddWithValue("Codigo", oUsuario.Codigo);
                     cmd.Parameters.AddWithValue("NombreCompleto", oUsuario.NombreCompleto);
                     cmd.Parameters.AddWithValue("Correo", oUsuario.Correo);
                     cmd.Parameters.AddWithValue("Clave", oUsuario.Clave);

@@ -191,6 +191,49 @@ namespace CapaDatos
             }
             return oVenta;
         }
+
+        public List<Venta> Listar()
+        {
+            List<Venta> oVenta = new List<Venta>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select IdVenta, NumeroDocumento, TipoDocumento, NombreCliente, MontoPago,");
+                    query.AppendLine("MontoCambio, MontoTotal, CONVERT(CHAR(10),FechaRegistro,103) FechaRegistro");
+                    query.AppendLine("from venta");
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
+                    cmd.CommandType = CommandType.Text;
+
+                    oConexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            oVenta.Add(new Venta()
+                            {
+
+                                IdVenta = Convert.ToInt32(reader["IdVenta"].ToString()),
+                                TipoDocumento = reader["TipoDocumento"].ToString(),
+                                NombreCliente = reader["NombreCliente"].ToString(),
+                                NumeroDocumento = reader["NumeroDocumento"].ToString(),
+                                MontoTotal = Convert.ToDecimal(reader["MontoTotal"].ToString()),
+                                MontoPago = Convert.ToDecimal(reader["MontoPago"].ToString()),
+                                MontoCambio = Convert.ToDecimal(reader["MontoCambio"].ToString()),
+                                FechaRegistro = reader["FechaRegistro"].ToString(),
+
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    oVenta = new List<Venta>();
+                }
+            }
+            return oVenta;
+        }
         public List<Venta_Detalle> obtenerDetalle(int id)
         {
             List<Venta_Detalle> ls = new List<Venta_Detalle>();

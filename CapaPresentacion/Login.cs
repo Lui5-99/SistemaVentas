@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaNegocio;
 using CapaEntidad;
 using System.IO;
+using CapaPresentacion.Utilidades;
 
 namespace CapaPresentacion
 {
@@ -36,11 +37,15 @@ namespace CapaPresentacion
         private void btIngresar_Click(object sender, EventArgs e)
         {
             Usuario oUsuario = new CN_Usuario().Listar().Where(
-                u => u.Documento == txtUser.Text && u.Clave == txtPwd.Text
+                u => u.Codigo == txtUser.Text && u.Clave == cSeguridad.Encrypt(txtPwd.Text)
                 ).FirstOrDefault();
 
             if(oUsuario != null)
             {
+                if (ckbRecordar.Checked)
+                    GuardarTxt(txtUser.Text.Trim(), txtPwd.Text.Trim());
+                else
+                    GuardarTxtVacio();
                 Inicio oInicio = new Inicio(oUsuario);
                 oInicio.Show();
                 this.Hide();
@@ -55,8 +60,13 @@ namespace CapaPresentacion
 
         private void frm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            txtUser.Text = "";
-            txtPwd.Text = "";
+            if (File.Exists(@"creedenciales.txt"))
+            {
+                string[] lineas = cSeguridad.read();
+                ckbRecordar.Checked = lineas[0] == string.Empty ? false : true;
+                txtUser.Text = lineas[0] == string.Empty ? string.Empty : cSeguridad.Decrypt(lineas[0]);
+                txtPwd.Text = lineas[1] == string.Empty ? string.Empty : cSeguridad.Decrypt(lineas[1]);
+            }
             Negocio oNegocio = new CN_Negocio().obtenerDatos();
             lblSistema.Text = oNegocio != null ? oNegocio.Nombre : "Sistema Ventas";
             bool obtenido = true;
@@ -72,6 +82,7 @@ namespace CapaPresentacion
                 picLogo.Visible = false;
                 picDefault.Visible = true;
             }
+            txtUser.Select();
             this.Show();
         }
 
@@ -93,7 +104,18 @@ namespace CapaPresentacion
                 picLogo.Visible = false;
                 picDefault.Visible = true;
             }
-                
+            if (File.Exists(@"creedenciales.txt"))
+            {
+                string[] lineas = cSeguridad.read();
+                ckbRecordar.Checked = lineas[0] == string.Empty ? false : true;
+                txtPwd.Text = lineas[1] == string.Empty ? string.Empty : cSeguridad.Decrypt(lineas[1]);
+                txtUser.Text = lineas[0] == string.Empty ? string.Empty : cSeguridad.Decrypt(lineas[0]);
+            }
+            else
+            {
+                ckbRecordar.Checked = false;
+            }
+
         }
 
         private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
@@ -109,6 +131,24 @@ namespace CapaPresentacion
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btIngresar_Click(sender, e);
+            }
+        }
+        private void GuardarTxt(string usuario, string pass)
+        {
+            usuario = cSeguridad.Encrypt(usuario.Trim());
+            pass = cSeguridad.Encrypt(pass.Trim());
+            using (StreamWriter sw = File.CreateText(@"creedenciales.txt"))
+            {
+                sw.Write(usuario + ";");
+                sw.Write(pass + ";");
+            }
+        }
+        private void GuardarTxtVacio()
+        {
+            using (StreamWriter sw = File.CreateText(@"creedenciales.txt"))
+            {
+                sw.Write(";");
+                sw.Write(";");
             }
         }
     }

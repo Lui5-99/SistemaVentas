@@ -57,7 +57,7 @@ namespace CapaPresentacion
                 {
                     "",
                     item.IdProveedor,
-                    item.Documento,
+                    item.Codigo,
                     item.RazonSocial,
                     item.Correo,
                     item.Telefono,
@@ -74,7 +74,7 @@ namespace CapaPresentacion
             Proveedor oProveedor = new Proveedor()
             {
                 IdProveedor = Convert.ToInt32(txtId.Text),
-                Documento = txtProveedor.Text,
+                Codigo = txtProveedor.Text,
                 RazonSocial = txtNombre.Text,
                 Correo = txtCorreo.Text,
                 Telefono = txtTelefono.Text,

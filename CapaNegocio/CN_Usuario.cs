@@ -18,7 +18,7 @@ namespace CapaNegocio
         public int Registrar(Usuario oUsuario, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oUsuario.Documento == string.Empty)
+            if (oUsuario.Codigo == string.Empty)
                 Mensaje += "Es necesario el usuario\n";
             if (oUsuario.NombreCompleto == string.Empty)
                 Mensaje += "Es necesario el nombre del usuario\n";
@@ -32,7 +32,7 @@ namespace CapaNegocio
         public bool Editar(Usuario oUsuario, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oUsuario.Documento == string.Empty)
+            if (oUsuario.Codigo == string.Empty)
                 Mensaje += "Es necesario el usuario\n";
             if (oUsuario.NombreCompleto == string.Empty)
                 Mensaje += "Es necesario el nombre del usuario\n";
@@ -46,7 +46,7 @@ namespace CapaNegocio
         public bool Eliminar(Usuario oUsuario, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oUsuario.Documento == string.Empty)
+            if (oUsuario.Codigo == string.Empty)
                 Mensaje += "Es necesario el usuario\n";
             if (oUsuario.NombreCompleto == string.Empty)
                 Mensaje += "Es necesario el nombre del usuario\n";

@@ -89,7 +89,7 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("SELECT C.IdCompra, U.NombreCompleto, ");
-                    query.AppendLine("P.Documento, P.RazonSocial, ");
+                    query.AppendLine("P.Codigo, P.RazonSocial, ");
                     query.AppendLine("C.TipoDocumento, C.NumeroDocumento, ");
                     query.AppendLine("C.MontoTotal, CONVERT(CHAR(10),C.FechaRegistro,103) FechaRegistro ");
                     query.AppendLine("FROM COMPRA C ");
@@ -115,7 +115,7 @@ namespace CapaDatos
                                 },
                                 oProveedor = new Proveedor()
                                 {
-                                    Documento = reader["Documento"].ToString(),
+                                    Codigo = reader["Codigo"].ToString(),
                                     RazonSocial = reader["RazonSocial"].ToString(),
                                 },
                                 TipoDocumento = reader["TipoDocumento"].ToString(),
@@ -129,6 +129,43 @@ namespace CapaDatos
                 catch(Exception ex)
                 {
                     oCompra = new Compra();
+                }
+            }
+            return oCompra;
+        }
+        public List<Compra> Listar()
+        {
+            List<Compra> oCompra = new List<Compra>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select IdCompra, TipoDocumento, NumeroDocumento, MontoTotal, CONVERT(CHAR(10),FechaRegistro,103) FechaRegistro from compra	 ");
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
+                    cmd.CommandType = CommandType.Text;
+
+                    oConexion.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            oCompra.Add(new Compra()
+                            {
+                                
+                                IdCompra = Convert.ToInt32(reader["IdCompra"].ToString()),
+                                TipoDocumento = reader["TipoDocumento"].ToString(),
+                                NumeroDocumento = reader["NumeroDocumento"].ToString(),
+                                MontoTotal = Convert.ToDecimal(reader["MontoTotal"].ToString()),
+                                FechaRegistro = reader["FechaRegistro"].ToString(),
+                                
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    oCompra = new List<Compra>();
                 }
             }
             return oCompra;
@@ -176,5 +213,6 @@ namespace CapaDatos
             }
             return ls;
         }
+
     }
 }

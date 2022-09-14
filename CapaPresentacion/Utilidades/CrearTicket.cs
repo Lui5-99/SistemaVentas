@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Runtime.InteropServices;
+using CapaEntidad;
+using CapaNegocio;
+using System.Globalization;
 
 namespace CapaPresentacion.Utilidades
 {
-    public class CrearTicket
+    public static class CrearTicket
     {
-        StringBuilder linea = new StringBuilder();
-        int maxCant = 50;
-        int _IdVenta;
-        private void AgregarCaracter(string c)
+        static StringBuilder linea = new StringBuilder();
+        static int maxCant = 50;
+        private static void AgregarCaracter(string c)
         {
             string texto = "";
             for (int i = 0; i < maxCant; i++)
@@ -23,7 +25,7 @@ namespace CapaPresentacion.Utilidades
             }
             linea.AppendLine(texto);
         }
-        private void AgregarTextoCentro(string texto)
+        private static void AgregarTextoCentro(string texto)
         {
 
             if (texto.Length > maxCant)
@@ -42,7 +44,7 @@ namespace CapaPresentacion.Utilidades
             }
         }
 
-        private void AgregarDosColumnas(string texto1, string texto2)
+        private static void AgregarDosColumnas(string texto1, string texto2)
         {
             int cantidadtexto = texto1.Length + texto2.Length;
             if (cantidadtexto > maxCant)
@@ -60,6 +62,40 @@ namespace CapaPresentacion.Utilidades
                 linea.AppendLine(texto1 + espacios + texto2);
             }
 
+        }
+        public static string crearTicketVenta(string _codigoVenta)
+        {
+            string tickettexto = Properties.Resources.Ticket.ToString();
+            Venta oVenta = new CN_Venta().obtenerVenta(_codigoVenta);
+            Negocio oNegocio = new CN_Negocio().obtenerDatos();
+
+            tickettexto = tickettexto.Replace("¡nombreempresa!", oNegocio.Nombre.ToUpper());
+            tickettexto = tickettexto.Replace("¡documentoempresa!", oNegocio.RFC);
+            tickettexto = tickettexto.Replace("¡correoempresa!", oNegocio.Correo);
+            tickettexto = tickettexto.Replace("!telefonoempresa¡", oNegocio.Telefono);
+
+            tickettexto = tickettexto.Replace("¡tipodocumento!", oVenta.TipoDocumento);
+            tickettexto = tickettexto.Replace("¡numerodocumento!", oVenta.NumeroDocumento);
+            tickettexto = tickettexto.Replace("¡fechaventa!", oVenta.FechaRegistro);
+
+            StringBuilder tr = new StringBuilder();
+            foreach (Venta_Detalle dv in oVenta.oDetalleVenta)
+            {
+                tr.AppendLine("<tr>");
+                tr.AppendLine("<td width=\"20\">" + dv.Cantidad + "</td>");
+                tr.AppendLine("<td width=\"180\">" + dv.oProducto.Nombre + "</td>");
+                tr.AppendLine("<td style=\"font-size:14px\">" + dv.PrecioVenta.ToString("0.00", new CultureInfo("es-PE")) + "</td>");
+                tr.AppendLine("<td style=\"font-size:14px\">" + dv.SubTotal.ToString("0.00", new CultureInfo("es-PE")) + "</td>");
+                tr.AppendLine("</tr>");
+            }
+
+            tickettexto = tickettexto.Replace("¡detalleventa!", tr.ToString());
+
+            tickettexto = tickettexto.Replace("¡totalpagar!", oVenta.MontoTotal.ToString("$ #,##0.00", new CultureInfo("es-PE")));
+            tickettexto = tickettexto.Replace("¡pagocon!", oVenta.MontoPago.ToString("$ #,##0.00", new CultureInfo("es-PE")));
+            tickettexto = tickettexto.Replace("¡cambio!", oVenta.MontoCambio.ToString("$ #,##0.00", new CultureInfo("es-PE")));
+
+            return tickettexto;
         }
     }
 }

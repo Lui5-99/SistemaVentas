@@ -28,7 +28,7 @@ go
 
 create table PROVEEDOR(
 IdProveedor int primary key identity,
-Documento varchar(50),
+Codigo varchar(50),
 RazonSocial varchar(50),
 Correo varchar(50),
 Telefono varchar(50),
@@ -40,7 +40,7 @@ go
 
 create table CLIENTE(
 IdCliente int primary key identity,
-Documento varchar(50),
+Codigo varchar(50),
 NombreCompleto varchar(50),
 Correo varchar(50),
 Telefono varchar(50),
@@ -52,7 +52,7 @@ go
 
 create table USUARIO(
 IdUsuario int primary key identity,
-Documento varchar(50),
+Codigo varchar(50),
 NombreCompleto varchar(50),
 Correo varchar(50),
 Clave varchar(50),
@@ -148,8 +148,9 @@ IdNegocio int primary key,
 Nombre varchar(60),
 RFC varchar(60),
 Direccion varchar(60),
-Logo varbinary(max) NULL, 
-Impresora varchar(60)
+Telefono varchar(60),
+Correo varchar(60),
+Logo varbinary(max) NULL
 )
 
 go
@@ -162,7 +163,7 @@ go
 
 
 create PROC SP_REGISTRARUSUARIO(
-@Documento varchar(50),
+@Codigo varchar(50),
 @NombreCompleto varchar(100),
 @Correo varchar(100),
 @Clave varchar(100),
@@ -177,10 +178,10 @@ begin
 	set @Mensaje = ''
 
 
-	if not exists(select * from USUARIO where Documento = @Documento)
+	if not exists(select * from USUARIO where Codigo = @Codigo)
 	begin
-		insert into usuario(Documento,NombreCompleto,Correo,Clave,IdRol,Estado) values
-		(@Documento,@NombreCompleto,@Correo,@Clave,@IdRol,@Estado)
+		insert into usuario(Codigo,NombreCompleto,Correo,Clave,IdRol,Estado) values
+		(@Codigo,@NombreCompleto,@Correo,@Clave,@IdRol,@Estado)
 
 		set @IdUsuarioResultado = SCOPE_IDENTITY()
 		
@@ -195,7 +196,7 @@ go
 
 create PROC SP_EDITARUSUARIO(
 @IdUsuario int,
-@Documento varchar(50),
+@Codigo varchar(50),
 @NombreCompleto varchar(100),
 @Correo varchar(100),
 @Clave varchar(100),
@@ -210,10 +211,10 @@ begin
 	set @Mensaje = ''
 
 
-	if not exists(select * from USUARIO where Documento = @Documento and idusuario != @IdUsuario)
+	if not exists(select * from USUARIO where Codigo = @Codigo and idusuario != @IdUsuario)
 	begin
 		update  usuario set
-		Documento = @Documento,
+		Codigo = @Codigo,
 		NombreCompleto = @NombreCompleto,
 		Correo = @Correo,
 		Clave = @Clave,
@@ -447,7 +448,7 @@ go
 /* ---------- PROCEDIMIENTOS PARA CLIENTE -----------------*/
 
 create PROC sp_RegistrarCliente(
-@Documento varchar(50),
+@Codigo varchar(50),
 @NombreCompleto varchar(50),
 @Correo varchar(50),
 @Telefono varchar(50),
@@ -458,10 +459,10 @@ create PROC sp_RegistrarCliente(
 begin
 	SET @Resultado = 0
 	DECLARE @IDPERSONA INT 
-	IF NOT EXISTS (SELECT * FROM CLIENTE WHERE Documento = @Documento)
+	IF NOT EXISTS (SELECT * FROM CLIENTE WHERE Codigo = @Codigo)
 	begin
-		insert into CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado) values (
-		@Documento,@NombreCompleto,@Correo,@Telefono,@Estado)
+		insert into CLIENTE(Codigo,NombreCompleto,Correo,Telefono,Estado) values (
+		@Codigo,@NombreCompleto,@Correo,@Telefono,@Estado)
 
 		set @Resultado = SCOPE_IDENTITY()
 	end
@@ -473,7 +474,7 @@ go
 
 create PROC sp_ModificarCliente(
 @IdCliente int,
-@Documento varchar(50),
+@Codigo varchar(50),
 @NombreCompleto varchar(50),
 @Correo varchar(50),
 @Telefono varchar(50),
@@ -484,10 +485,10 @@ create PROC sp_ModificarCliente(
 begin
 	SET @Resultado = 1
 	DECLARE @IDPERSONA INT 
-	IF NOT EXISTS (SELECT * FROM CLIENTE WHERE Documento = @Documento and IdCliente != @IdCliente)
+	IF NOT EXISTS (SELECT * FROM CLIENTE WHERE Codigo = @Codigo and IdCliente != @IdCliente)
 	begin
 		update CLIENTE set
-		Documento = @Documento,
+		Codigo = @Codigo,
 		NombreCompleto = @NombreCompleto,
 		Correo = @Correo,
 		Telefono = @Telefono,
@@ -506,7 +507,7 @@ GO
 /* ---------- PROCEDIMIENTOS PARA PROVEEDOR -----------------*/
 
 create PROC sp_RegistrarProveedor(
-@Documento varchar(50),
+@Codigo varchar(50),
 @RazonSocial varchar(50),
 @Correo varchar(50),
 @Telefono varchar(50),
@@ -517,10 +518,10 @@ create PROC sp_RegistrarProveedor(
 begin
 	SET @Resultado = 0
 	DECLARE @IDPERSONA INT 
-	IF NOT EXISTS (SELECT * FROM PROVEEDOR WHERE Documento = @Documento)
+	IF NOT EXISTS (SELECT * FROM PROVEEDOR WHERE Codigo = @Codigo)
 	begin
-		insert into PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado) values (
-		@Documento,@RazonSocial,@Correo,@Telefono,@Estado)
+		insert into PROVEEDOR(Codigo,RazonSocial,Correo,Telefono,Estado) values (
+		@Codigo,@RazonSocial,@Correo,@Telefono,@Estado)
 
 		set @Resultado = SCOPE_IDENTITY()
 	end
@@ -532,7 +533,7 @@ GO
 
 create PROC sp_ModificarProveedor(
 @IdProveedor int,
-@Documento varchar(50),
+@Codigo varchar(50),
 @RazonSocial varchar(50),
 @Correo varchar(50),
 @Telefono varchar(50),
@@ -543,10 +544,10 @@ create PROC sp_ModificarProveedor(
 begin
 	SET @Resultado = 1
 	DECLARE @IDPERSONA INT 
-	IF NOT EXISTS (SELECT * FROM PROVEEDOR WHERE Documento = @Documento and IdProveedor != @IdProveedor)
+	IF NOT EXISTS (SELECT * FROM PROVEEDOR WHERE Codigo = @Codigo and IdProveedor != @IdProveedor)
 	begin
 		update PROVEEDOR set
-		Documento = @Documento,
+		Codigo = @Codigo,
 		RazonSocial = @RazonSocial,
 		Correo = @Correo,
 		Telefono = @Telefono,
@@ -725,7 +726,7 @@ create PROC sp_ReporteCompras(
    select 
  convert(char(10),c.FechaRegistro,103)[FechaRegistro],c.TipoDocumento,c.NumeroDocumento,c.MontoTotal,
  u.NombreCompleto[UsuarioRegistro],
- pr.Documento[DocumentoProveedor],pr.RazonSocial,
+ pr.Codigo[DocumentoProveedor],pr.RazonSocial,
  p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dc.PrecioCompra,dc.PrecioVenta,dc.Cantidad,dc.MontoTotal[SubTotal]
  from COMPRA c
  inner join USUARIO u on u.IdUsuario = c.IdUsuario
@@ -777,7 +778,7 @@ GO
 
  GO
 
- insert into USUARIO(Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
+ insert into USUARIO(Codigo,NombreCompleto,Correo,Clave,IdRol,Estado)
  values 
  ('Admin','ADMINISTRADOR','@GMAIL.COM','Admin',1,1)
 
@@ -813,8 +814,8 @@ GO
 /*insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion) values
 (1,'Luis Arellano','AEBL990905DX5','Zamora #43, Vasco de Quiroga, La Piedad Mich.')*/
 
-insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion, Impresora) values
-(1,'Sistema Ventas','XAXX010101000','','')
+insert into NEGOCIO(IdNegocio,Nombre,RFC,Direccion, Telefono, Correo) values
+(1,'Sistema Ventas','XAXX010101000','','','')
 
 GO
 insert into Categoria(Descripcion,Estado) values

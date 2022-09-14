@@ -188,6 +188,12 @@
     <Compile Include="Modales\mdCliente.Designer.cs">
       <DependentUpon>mdCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modales\mdCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\mdCompra.Designer.cs">
+      <DependentUpon>mdCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modales\mdProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,9 +206,16 @@
     <Compile Include="Modales\mdProveedor.Designer.cs">
       <DependentUpon>mdProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modales\mdVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\mdVenta.Designer.cs">
+      <DependentUpon>mdVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\CrearTicket.cs" />
+    <Compile Include="Utilidades\cSeguridad.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
@@ -261,11 +274,17 @@
     <EmbeddedResource Include="Modales\mdCliente.resx">
       <DependentUpon>mdCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modales\mdCompra.resx">
+      <DependentUpon>mdCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdProductos.resx">
       <DependentUpon>mdProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdProveedor.resx">
       <DependentUpon>mdProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modales\mdVenta.resx">
+      <DependentUpon>mdVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

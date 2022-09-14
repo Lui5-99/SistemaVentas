@@ -68,8 +68,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ImprimirVenta";
-            this.Text = "ImprimirVenta";
             this.Load += new System.EventHandler(this.ImprimirVenta_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImprimirVenta_KeyDown);
             this.ResumeLayout(false);
 
         }

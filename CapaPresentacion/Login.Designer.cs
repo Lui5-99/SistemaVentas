@@ -39,6 +39,7 @@
             this.btIngresar = new FontAwesome.Sharp.IconButton();
             this.btCancelar = new FontAwesome.Sharp.IconButton();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.ckbRecordar = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picDefault)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +88,7 @@
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(289, 152);
+            this.txtPwd.Location = new System.Drawing.Point(289, 133);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(267, 20);
             this.txtPwd.TabIndex = 6;
@@ -106,7 +107,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(289, 133);
+            this.label4.Location = new System.Drawing.Point(289, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 8;
@@ -165,11 +166,22 @@
             this.picLogo.TabStop = false;
             this.picLogo.Visible = false;
             // 
+            // ckbRecordar
+            // 
+            this.ckbRecordar.AutoSize = true;
+            this.ckbRecordar.Location = new System.Drawing.Point(289, 160);
+            this.ckbRecordar.Name = "ckbRecordar";
+            this.ckbRecordar.Size = new System.Drawing.Size(70, 17);
+            this.ckbRecordar.TabIndex = 12;
+            this.ckbRecordar.Text = "Recordar";
+            this.ckbRecordar.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 271);
+            this.Controls.Add(this.ckbRecordar);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btIngresar);
@@ -205,5 +217,6 @@
         private FontAwesome.Sharp.IconButton btIngresar;
         private FontAwesome.Sharp.IconButton btCancelar;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.CheckBox ckbRecordar;
     }
 }

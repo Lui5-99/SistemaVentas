@@ -15,9 +15,11 @@ namespace CapaPresentacion
 {
     public partial class frmUsuarios : Form
     {
-        public frmUsuarios()
+        private Usuario _Usuario;
+        public frmUsuarios(Usuario oUsuario = null)
         {
             InitializeComponent();
+            _Usuario = oUsuario;
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace CapaPresentacion
                 {
                     "",
                     item.IdUsuario,
-                    item.Documento,
+                    item.Codigo,
                     item.NombreCompleto,
                     item.Correo,
                     item.Clave,
@@ -80,6 +82,11 @@ namespace CapaPresentacion
                     item.Estado == true ? 1 : 0,
                     item.Estado == true ? "Activo":"No Activo"
                 });
+            }
+            if(_Usuario.oRol.IdRol == 1)
+            {
+                txtPwd.UseSystemPasswordChar = false;
+                txtPwd2.UseSystemPasswordChar = false;
             }
             txtUsuario.Select();
         }
@@ -90,7 +97,7 @@ namespace CapaPresentacion
             Usuario oUsuario = new Usuario()
             {
                 IdUsuario = Convert.ToInt32(txtId.Text),
-                Documento = txtUsuario.Text,
+                Codigo = txtUsuario.Text,
                 NombreCompleto = txtNombre.Text,
                 Correo = txtCorreo.Text,
                 Clave = txtPwd.Text,
@@ -200,9 +207,9 @@ namespace CapaPresentacion
                     txtUsuario.Text = dgvDatos.Rows[indice].Cells["Documento"].Value.ToString();
                     txtNombre.Text = dgvDatos.Rows[indice].Cells["NombreCompleto"].Value.ToString();
                     txtCorreo.Text = dgvDatos.Rows[indice].Cells["Correo"].Value.ToString();
-                    txtPwd.Text = dgvDatos.Rows[indice].Cells["Clave"].Value.ToString();
-                    txtPwd2.Text = dgvDatos.Rows[indice].Cells["Clave"].Value.ToString();
-                    foreach(OpcionCombo oc in cbRol.Items)
+                    txtPwd.Text = cSeguridad.Decrypt(dgvDatos.Rows[indice].Cells["Clave"].Value.ToString());
+                    txtPwd2.Text = cSeguridad.Decrypt(dgvDatos.Rows[indice].Cells["Clave"].Value.ToString());
+                    foreach (OpcionCombo oc in cbRol.Items)
                     {
                         if(Convert.ToInt32(oc.valor) == Convert.ToInt32(dgvDatos.Rows[indice].Cells["IdRol"].Value.ToString()))
                         {

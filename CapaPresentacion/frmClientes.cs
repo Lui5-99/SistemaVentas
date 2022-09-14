@@ -57,7 +57,7 @@ namespace CapaPresentacion
                 {
                     "",
                     item.IdCliente,
-                    item.Documento,
+                    item.Codigo,
                     item.NombreCompleto,
                     item.Correo,
                     item.Telefono,
@@ -74,7 +74,7 @@ namespace CapaPresentacion
             Cliente oCliente = new Cliente()
             {
                 IdCliente = Convert.ToInt32(txtId.Text),
-                Documento = txtCliente.Text,
+                Codigo = txtCliente.Text,
                 NombreCompleto = txtNombre.Text,
                 Correo = txtCorreo.Text,
                 Telefono = txtTelefono.Text,

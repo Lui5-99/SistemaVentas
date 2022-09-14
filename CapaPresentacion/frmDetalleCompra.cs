@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Modales;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
@@ -25,43 +26,60 @@ namespace CapaPresentacion
 
         private void btBusqueda_Click(object sender, EventArgs e)
         {
-            Compra oCompra = new CN_Compra().obtenerCompra(txtBusqueda.Text);
-            if(oCompra.IdCompra != 0)
+            using (var modal = new mdCompra())
             {
-                txtBusqueda.BackColor = Color.Honeydew;
-                txtNumeroDocto.Text = oCompra.NumeroDocumento;
-                txtFecha.Text = oCompra.FechaRegistro;
-                txtTipoDocto.Text = oCompra.TipoDocumento;
-                txtUsuario.Text = oCompra.oUsuario.NombreCompleto;
-                txtDocumento.Text = oCompra.oProveedor.Documento;
-                txtRazon.Text = oCompra.oProveedor.RazonSocial;
+                var result = modal.ShowDialog();
 
-                dgvDatos.Rows.Clear();
-                foreach(Detalle_Compra dc in oCompra.oDetalleCompra)
+                if (result == DialogResult.OK)
                 {
-                    dgvDatos.Rows.Add(new object[]
-                    {
-                        dc.oProducto.Nombre,
-                        dc.PrecioCompra,
-                        dc.Cantidad,
-                        dc.MontoTotal
-                    });
-                }
-                txtMonto.Text = oCompra.MontoTotal.ToString("0.00");
-            }
-            else
-            {
-                txtBusqueda.BackColor = Color.MistyRose;
-                txtNumeroDocto.Text = "";
-                txtFecha.Text = "";
-                txtTipoDocto.Text = "";
-                txtUsuario.Text = "";
-                txtDocumento.Text = ""; ;
-                txtRazon.Text = "";
+                    txtBusqueda.Text = modal._Compra.NumeroDocumento.ToString();
+                    txtBusqueda.BackColor = Color.Honeydew;
 
-                dgvDatos.Rows.Clear();
-                txtMonto.Text = "0.00";
+                    Compra oCompra = new CN_Compra().obtenerCompra(txtBusqueda.Text);
+                    if (oCompra.IdCompra != 0)
+                    {
+                        txtBusqueda.BackColor = Color.Honeydew;
+                        txtNumeroDocto.Text = oCompra.NumeroDocumento;
+                        txtFecha.Text = oCompra.FechaRegistro;
+                        txtTipoDocto.Text = oCompra.TipoDocumento;
+                        txtUsuario.Text = oCompra.oUsuario.NombreCompleto;
+                        txtDocumento.Text = oCompra.oProveedor.Codigo;
+                        txtRazon.Text = oCompra.oProveedor.RazonSocial;
+
+                        dgvDatos.Rows.Clear();
+                        foreach (Detalle_Compra dc in oCompra.oDetalleCompra)
+                        {
+                            dgvDatos.Rows.Add(new object[]
+                            {
+                                dc.oProducto.Nombre,
+                                dc.PrecioCompra,
+                                dc.Cantidad,
+                                dc.MontoTotal
+                            });
+                        }
+                        txtMonto.Text = oCompra.MontoTotal.ToString("0.00");
+                    }
+                    else
+                    {
+                        txtBusqueda.BackColor = Color.MistyRose;
+                        txtNumeroDocto.Text = "";
+                        txtFecha.Text = "";
+                        txtTipoDocto.Text = "";
+                        txtUsuario.Text = "";
+                        txtDocumento.Text = ""; ;
+                        txtRazon.Text = "";
+
+                        dgvDatos.Rows.Clear();
+                        txtMonto.Text = "0.00";
+                    }
+                }
+                else
+                {
+                    txtBusqueda.BackColor = Color.MistyRose;
+                    txtBusqueda.Select();
+                }
             }
+            
         }
 
         private void btPDF_Click(object sender, EventArgs e)
@@ -158,7 +176,7 @@ namespace CapaPresentacion
                     txtFecha.Text = oCompra.FechaRegistro;
                     txtTipoDocto.Text = oCompra.TipoDocumento;
                     txtUsuario.Text = oCompra.oUsuario.NombreCompleto;
-                    txtDocumento.Text = oCompra.oProveedor.Documento;
+                    txtDocumento.Text = oCompra.oProveedor.Codigo;
                     txtRazon.Text = oCompra.oProveedor.RazonSocial;
 
                     dgvDatos.Rows.Clear();

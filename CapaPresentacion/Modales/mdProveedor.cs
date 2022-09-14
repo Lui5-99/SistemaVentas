@@ -44,7 +44,7 @@ namespace CapaPresentacion.Modales
                 dgvDatos.Rows.Add(new object[]
                 {
                     item.IdProveedor,
-                    item.Documento,
+                    item.Codigo,
                     item.RazonSocial,
                 });
             }
@@ -59,7 +59,7 @@ namespace CapaPresentacion.Modales
                 _Proveedor = new Proveedor()
                 {
                     IdProveedor = Convert.ToInt32(dgvDatos.Rows[iRow].Cells["Id"].Value.ToString()),
-                    Documento = dgvDatos.Rows[iRow].Cells["Documento"].Value.ToString(),
+                    Codigo = dgvDatos.Rows[iRow].Cells["Documento"].Value.ToString(),
                     RazonSocial = dgvDatos.Rows[iRow].Cells["RazonSocial"].Value.ToString()
 
                 };

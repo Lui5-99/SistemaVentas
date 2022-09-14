@@ -40,18 +40,8 @@ namespace CapaPresentacion
             txtNombre.Text = oNegocio.Nombre;
             txtRFC.Text = oNegocio.RFC;
             txtDireccion.Text = oNegocio.Direccion;
-            foreach (string printer in PrinterSettings.InstalledPrinters)
-            {
-                cbImpresora.Items.Add(new OpcionCombo()
-                {
-                    valor = count,
-                    texto = printer,
-                });
-                count++;
-            }
-            cbImpresora.DisplayMember = "texto";
-            cbImpresora.ValueMember = "valor";
-            cbImpresora.SelectedIndex = 0;
+            txtTelefono.Text = oNegocio.Telefono;
+            txtCorreo.Text = oNegocio.Correo;
         }
 
         private void btSubir_Click(object sender, EventArgs e)
@@ -78,23 +68,11 @@ namespace CapaPresentacion
                 Nombre = txtNombre.Text,
                 RFC = txtRFC.Text,
                 Direccion = txtDireccion.Text,
+                Telefono = txtTelefono.Text,
+                Correo = txtCorreo.Text,
             };
             bool respuesta = new CN_Negocio().GuardarDatos(oNegocio, out mensaje);
             if(respuesta)
-                MessageBox.Show("Datos Actualizados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
-
-        private void btImpresora_Click(object sender, EventArgs e)
-        {
-            string mensaje = string.Empty;
-            Negocio oNegocio = new Negocio()
-            {
-                Impresora = ((OpcionCombo)cbImpresora.SelectedItem).texto
-            };
-            bool respuesta = new CN_Negocio().GuardarImpresora(oNegocio, out mensaje);
-            if (respuesta)
                 MessageBox.Show("Datos Actualizados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

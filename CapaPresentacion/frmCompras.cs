@@ -49,7 +49,7 @@ namespace CapaPresentacion
                 if(result == DialogResult.OK)
                 {
                     txtIdProveedor.Text = modal._Proveedor.IdProveedor.ToString();
-                    txtDocumento.Text = modal._Proveedor.Documento.ToString();
+                    txtDocumento.Text = modal._Proveedor.Codigo.ToString();
                     txtDocumento.BackColor = Color.Honeydew;
                     txtRazon.Text = modal._Proveedor.RazonSocial.ToString();
                 }
@@ -262,12 +262,12 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.Enter)
             {
-                Proveedor oProveedor = new CN_Proveedor().Listar().Where(p => p.Documento == txtDocumento.Text && p.Estado == true).FirstOrDefault();
+                Proveedor oProveedor = new CN_Proveedor().Listar().Where(p => p.Codigo == txtDocumento.Text && p.Estado == true).FirstOrDefault();
                 if (oProveedor != null)
                 {
                     txtDocumento.BackColor = Color.Honeydew;
                     txtIdProveedor.Text = oProveedor.IdProveedor.ToString();
-                    txtDocumento.Text = oProveedor.Documento.ToString();
+                    txtDocumento.Text = oProveedor.Codigo.ToString();
                     txtRazon.Text = oProveedor.RazonSocial.ToString();
                     txtCodigo.Select();
                 }

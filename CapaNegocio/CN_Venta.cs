@@ -38,5 +38,9 @@ namespace CapaNegocio
             }
             return oVenta;
         }
+        public List<Venta> Listar()
+        {
+            return oCNVenta.Listar();
+        }
     }
 }

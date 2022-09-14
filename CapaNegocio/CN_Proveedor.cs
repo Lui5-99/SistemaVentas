@@ -18,7 +18,7 @@ namespace CapaNegocio
         public int Registrar(Proveedor oProveedor, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oProveedor.Documento == string.Empty)
+            if (oProveedor.Codigo == string.Empty)
                 Mensaje += "Es necesario el Proveedor\n";
             if (oProveedor.RazonSocial == string.Empty)
                 Mensaje += "Es necesario el nombre del Proveedor\n";
@@ -30,7 +30,7 @@ namespace CapaNegocio
         public bool Editar(Proveedor oProveedor, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oProveedor.Documento == string.Empty)
+            if (oProveedor.Codigo == string.Empty)
                 Mensaje += "Es necesario el Proveedor\n";
             if (oProveedor.RazonSocial == string.Empty)
                 Mensaje += "Es necesario el nombre del Proveedor\n";
@@ -42,7 +42,7 @@ namespace CapaNegocio
         public bool Eliminar(Proveedor oProveedor, out string Mensaje)
         {
             Mensaje = string.Empty;
-            if (oProveedor.Documento == string.Empty)
+            if (oProveedor.Codigo == string.Empty)
                 Mensaje += "Es necesario el Proveedor\n";
             if (oProveedor.RazonSocial == string.Empty)
                 Mensaje += "Es necesario el nombre del Proveedor\n";

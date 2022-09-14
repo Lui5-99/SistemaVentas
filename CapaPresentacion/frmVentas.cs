@@ -48,7 +48,7 @@ namespace CapaPresentacion
 
                 if (result == DialogResult.OK)
                 {
-                    txtCodigoCliente.Text = modal._Cliente.Documento.ToString();
+                    txtCodigoCliente.Text = modal._Cliente.Codigo.ToString();
                     txtCodigoCliente.BackColor = Color.Honeydew;
                     txtnombrecliente.Text = modal._Cliente.NombreCompleto.ToString();
                 }
@@ -64,11 +64,11 @@ namespace CapaPresentacion
         {
             if (e.KeyData == Keys.Enter)
             {
-                Cliente oCliente = new CN_Cliente().Listar().Where(p => p.Documento == txtCodigoCliente.Text && p.Estado == true).FirstOrDefault();
+                Cliente oCliente = new CN_Cliente().Listar().Where(p => p.Codigo == txtCodigoCliente.Text && p.Estado == true).FirstOrDefault();
                 if (oCliente != null)
                 {
                     txtCodigoCliente.BackColor = Color.Honeydew;
-                    txtCodigoCliente.Text = oCliente.Documento.ToString();
+                    txtCodigoCliente.Text = oCliente.Codigo.ToString();
                     txtnombrecliente.Text = oCliente.NombreCompleto.ToString();
                     txtCodigo.Select();
                 }
